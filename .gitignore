@@ -1,0 +1,9 @@
+*
+!*/
+
+# Allow .gitignore files
+!.gitignore
+
+# Allow docs
+!docs/branding/*.svg
+!README.md
