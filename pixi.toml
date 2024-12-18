@@ -9,6 +9,9 @@ license-file = "LICENSE"
 readme = "README.md"
 repository = "https://codeberg.org/HibiscusCollective/gitnavi"
 
+[tasks]
+lint = "echo Hello"
+
 [build-dependencies]
 nodejs = ">=22.12.0,<22.13"
 pnpm = ">=9.15.0,<10"

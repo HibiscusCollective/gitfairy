@@ -19,10 +19,17 @@
 !renovate.json
 
 ## Linter configs
-!.mega-linter.yml
-!.cspell.json
-!.markdownlint-cli2.yaml
+!.checkov.yml
+!.gitleaks.toml
+!.grype.yaml
 !.jscpd.json
+!.markdown-link-check.json
+!.markdownlint-cli2.yaml
+!.markdownlint.yaml
+!.mega-linter.yml
+!.secretlintrc.json
+!.yamllint.yml
+!cspell.json
 
 ## Pipeline config
 !.azure/pipelines/azure-pipelines.yml
@@ -40,7 +47,11 @@
 ## Rust
 !Cargo.toml
 
+## Docker
+!Dockerfile
+
 # Explicitly ignored local files
 .history
 .pixi
 node_modules
+megalinter-reports
