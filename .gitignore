@@ -6,19 +6,23 @@
 
 ## Git
 !.gitignore
+!.gitattributes
 
 ## Package management
 !pixi.toml
+!pixi.lock
 !package.json
 !pnpm-lock.yaml
 
 ## Workspace config
-!.trunk/trunk.yaml
 !lefthook.yml
-!.markdownlint-cli2.yaml
 !renovate.json
-!.deepsource.toml
-!.arnica.yml
+
+## Linter configs
+!.mega-linter.yml
+!.cspell.json
+!.markdownlint-cli2.yaml
+!.jscpd.json
 
 ## Pipeline config
 !.azure/pipelines/azure-pipelines.yml
