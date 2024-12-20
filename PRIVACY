@@ -1,0 +1,102 @@
+# GitNavi Privacy Policy
+
+## Our Privacy Commitment
+
+GitNavi is built with privacy as a fundamental principle. We believe your development workflow should be your business, not ours.
+
+## Data Collection
+
+### By Default: Zero Collection
+
+- No telemetry
+- No analytics
+- No user tracking
+- No data sharing
+
+### Opt-In Features
+
+#### Crash Reports and Diagnostics
+
+When you explicitly choose to send a crash report:
+
+- System information is automatically scrubbed of identifiable data
+- Logs are sanitized to remove sensitive information
+- Data is used only for bug investigation
+- All data is destroyed once the issue is confirmed fixed
+
+#### Anonymous Telemetry
+
+If you opt-in to telemetry collection:
+
+- All data is anonymized
+- No personally identifiable information is collected
+- Data may be aggregated with third-party analytics providers
+- Used only for improving GitNavi's functionality
+
+## Data Usage
+
+### Bug Reports
+
+- Used only for investigating reported issues
+- Automatically scrubbed of sensitive information
+- Retained only until issue resolution
+- Access limited to project maintainers
+
+### Telemetry Data
+
+If you opt-in, collected data may include:
+
+- Feature usage patterns
+- Performance metrics
+- Error rates
+- System configuration
+
+This data:
+
+- Is always anonymized
+- May be shared with analytics providers
+- Is used for product improvement only
+- Will never be sold or traded
+
+## Third-Party Services
+
+If you opt-in to telemetry:
+
+- Data may be stored with analytics providers
+- Only anonymized data is shared
+- Providers must meet our privacy standards
+- Data sharing is for analysis purposes only
+
+## Data Protection
+
+We protect your data through:
+
+- Automatic log sanitization
+- Secure transmission
+- Limited retention periods
+- Access controls
+
+## Your Rights
+
+You have the right to:
+
+- Opt-out at any time
+- Request data deletion
+- Review collection settings
+- Modify your preferences
+
+## Changes to Policy
+
+- Users will be notified of changes
+- Opt-in required for new collection
+- Previous settings respected
+- Clear notification of changes
+
+## Contact
+
+For privacy concerns, please contact:
+[privacy at hibiscusgames dot com]
+
+## Legal Notice
+
+This privacy policy is subject to the terms of the project's License. While we strive to protect your privacy, this policy provides guidelines and is not a contractual obligation.

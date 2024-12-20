@@ -1,0 +1,6 @@
+## Allow markdown doc files
+!**/*.md
+
+## Allow images in the assets directories
+!**/assets/*.png
+!**/assets/*.svg
