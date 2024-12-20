@@ -1,11 +1,11 @@
 [workspace]
 members = [
-    "lib",
-    "cli",
-    "ui",
-    "platforms/windows",
-    "platforms/macos",
-    "platforms/linux",
+  "lib",
+  "cli",
+  "ui",
+  "platforms/windows",
+  "platforms/macos",
+  "platforms/linux",
 ]
 resolver = "2"
 
