@@ -1,0 +1,11 @@
+---
+gitlab:
+  enabled: false
+
+github:
+  enabled: false
+  sync:
+    issues:
+      enabled: true
+      syncComments: false
+      labels: []
