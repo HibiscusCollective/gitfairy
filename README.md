@@ -4,6 +4,7 @@ runme:
   version: v3
 ---
 
-<div align="center"><img src="docs/branding/logo-with-label.svg" width=512px/></div>
+# Git Navi
 
+[<img src="./branding/logo-with-label.svg" alt="Git Navi logo" width="25%" style="float:right"/>](./branding/logo-with-label.svg)
 Git things done — right from the context menu. No commands, no clutter, just like magic.

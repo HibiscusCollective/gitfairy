@@ -1,0 +1,17 @@
+[package]
+name = "gitnavi-macos"                                                      # Not published to crates.io
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+license-file.workspace = true
+repository.workspace = true
+description = "macOS-specific installer and Finder integration for GitNavi"
+publish = false                                                             # Prevent accidental publishing
+
+[dependencies]
+gitnavi = { path = "../../lib" }
+gitnavi-ui = { path = "../../ui" }
+cocoa = "0.25"                     # For macOS API integration
+objc = "0.2"
+tokio.workspace = true

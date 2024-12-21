@@ -1,0 +1,14 @@
+[package]
+name = "gitnavi"                                                       # This will be the name on crates.io
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+license-file.workspace = true
+repository.workspace = true
+description = "A library for Git repository navigation and management"
+
+[dependencies]
+tokio.workspace = true
+serde.workspace = true
+serde_json.workspace = true

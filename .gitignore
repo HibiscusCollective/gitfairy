@@ -1,9 +1,62 @@
+# Deny all
 *
 !*/
 
-# Allow .gitignore files
-!.gitignore
+# Allowed files
 
-# Allow docs
-!docs/branding/*.svg
+## Git
+!.gitignore
+!.gitattributes
+
+## Package management
+!pixi.toml
+!pixi.lock
+!package.json
+!pnpm-lock.yaml
+
+## Workspace config
+!lefthook.yml
+!renovate.json
+
+## Linter configs
+!.checkov.yml
+!.gitleaks.toml
+!.grype.yaml
+!.jscpd.json
+!.markdown-link-check.json
+!.markdownlint-cli2.yaml
+!.markdownlint.yaml
+!.mega-linter.yml
+!.secretlintrc.json
+!.yamllint.yml
+!cspell.json
+
+## Pipeline config
+!.azure/pipelines/azure-pipelines.yml
+
+## Documentation
+!docs/
 !README.md
+!CONTRIBUTING.md
+!LICENSE
+!SECURITY
+!PRIVACY
+
+## Branding
+!branding/*.svg
+!branding/*.png
+
+## Rust
+!Cargo.toml
+
+## Docker
+!Dockerfile
+
+## AI Config
+!.windsurfrules
+
+# Explicitly ignored local files
+.history
+.pixi
+node_modules
+megalinter-reports
