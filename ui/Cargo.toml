@@ -1,5 +1,5 @@
 [package]
-name = "gitnavi-ui"  # This will be the name on crates.io
+name = "gitnavi-ui"                                                         # This will be the name on crates.io
 version.workspace = true
 edition.workspace = true
 authors.workspace = true

@@ -1,5 +1,5 @@
 [package]
-name = "gitnavi-linux"  # Not published to crates.io
+name = "gitnavi-linux"                                                            # Not published to crates.io
 version.workspace = true
 edition.workspace = true
 authors.workspace = true
@@ -7,11 +7,11 @@ license.workspace = true
 license-file.workspace = true
 repository.workspace = true
 description = "Linux-specific installer and file manager integration for GitNavi"
-publish = false  # Prevent accidental publishing
+publish = false                                                                   # Prevent accidental publishing
 
 [dependencies]
 gitnavi = { path = "../../lib" }
 gitnavi-ui = { path = "../../ui" }
-gtk = "0.18"  # For Linux desktop integration
+gtk = "0.18"                       # For Linux desktop integration
 gio = "0.18"
 tokio.workspace = true

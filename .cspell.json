@@ -1,17 +1,37 @@
 {
   "ignorePaths": [
+    "**/.git/**",
     "**/node_modules/**",
     "**/vscode-extension/**",
-    "**/.git/**",
-    "**/.pnpm-lock.json",
+    "**/.history/**",
+    "**/.pixi/**",
+    "**/megalinter-reports/**",
     "branding/*.svg",
-    ".vscode",
     "megalinter",
-    "package-lock.json",
-    "report"
+    "megalinter-report/**",
+    "report",
+    ".vscode",
+    ".pnpm-lock.yaml",
+    "package-lock.json"
+  ],
+  "ignoreRegExpList": [
+    "/(?<=---[\\n\\r]+(?:.*[\\n\\r])*)\\s*id: \\w+(?=[\\n\\r]+.|[\\n\\r]+---)+/gm"
   ],
   "language": "en",
   "noConfigSearch": true,
-  "words": ["megalinter", "oxsecurity"],
-  "version": "0.2"
+  "version": "0.2",
+  "words": [
+    "Navi",
+    "ACCESSTOKEN",
+    "UNACCRUED",
+    "cryosphere",
+    "grype",
+    "lefthook",
+    "markdownlint",
+    "pixi",
+    "runme",
+    "secretlintrc",
+    "unenforceability",
+    "venv"
+  ]
 }
