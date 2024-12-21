@@ -15,7 +15,7 @@
 ## Workspace config
 !.trunk/trunk.yaml
 !lefthook.yml
-!markdownlint-cli2.yaml
+!.markdownlint-cli2.yaml
 !renovate.json
 !.deepsource.toml
 !.arnica.yml
@@ -31,6 +31,7 @@
 
 ## Branding
 !branding/*.svg
+!branding/*.png
 
 ## Rust
 !Cargo.toml
