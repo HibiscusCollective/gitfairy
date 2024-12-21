@@ -1,9 +1,41 @@
+# Deny all
 *
 !*/
 
-# Allow .gitignore files
+# Allowed files
+
+## Git
 !.gitignore
 
-# Allow docs
-!docs/branding/*.svg
+## Package management
+!pixi.toml
+!package.json
+!pnpm-lock.yaml
+
+## Workspace config
+!.trunk/trunk.yaml
+!lefthook.yml
+!markdownlint-cli2.yaml
+!renovate.json
+!.deepsource.toml
+!.arnica.yml
+
+## Pipeline config
+!.azure/pipelines/azure-pipelines.yml
+
+## Documentation
+!docs/
 !README.md
+!CONTRIBUTING.md
+!LICENSE
+
+## Branding
+!branding/*.svg
+
+## Rust
+!Cargo.toml
+
+# Explicitly ignored local files
+.history
+.pixi
+node_modules

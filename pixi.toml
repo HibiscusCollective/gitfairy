@@ -1,0 +1,22 @@
+[project]
+name = "gitnavi"
+version = "0.1.0"
+description = "A cross-platform Git navigation and management tool"
+authors = []
+channels = ["conda-forge"]
+platforms = ["win-64", "linux-64", "osx-64", "osx-arm64"]
+
+[tasks]
+test = "cargo test"
+lint = "trunk check"
+build = "cargo build"
+dev = "cargo tauri dev"
+
+[dependencies]
+rust = "1.75.0.*"
+trunk-io = "1.22.8.*"
+megalinter = "7.6.0.*"
+lefthook = "1.5.5.*"
+
+[target.development.dependencies]
+cargo-tauri = "2.0.0.*"
