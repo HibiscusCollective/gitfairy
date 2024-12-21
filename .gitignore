@@ -39,6 +39,8 @@
 !README.md
 !CONTRIBUTING.md
 !LICENSE
+!SECURITY
+!PRIVACY
 
 ## Branding
 !branding/*.svg
@@ -49,6 +51,9 @@
 
 ## Docker
 !Dockerfile
+
+## AI Config
+!.windsurfrules
 
 # Explicitly ignored local files
 .history
