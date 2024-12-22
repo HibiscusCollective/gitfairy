@@ -8,6 +8,10 @@
 !.gitignore
 !.gitattributes
 
+## GitHub
+!.github/workflows/*.yml
+!.github/*.yml
+
 ## Package management
 !pixi.toml
 !pixi.lock
@@ -19,6 +23,7 @@
 !renovate.json
 
 ## Linter configs
+!.deepsource.toml
 !.checkov.yml
 !.gitleaks.toml
 !.grype.yaml

@@ -1,0 +1,20 @@
+version = 1
+
+test_patterns = ["tests/**"]
+
+exclude_patterns = ["megalinter-reports/**", "node_modules/**"]
+
+[[analyzers]]
+name = "javascript"
+
+[analyzers.meta]
+environment = ["nodejs", "vitest"]
+
+[[analyzers]]
+name = "secrets"
+
+[[analyzers]]
+name = "shell"
+
+[[analyzers]]
+name = "rust"
