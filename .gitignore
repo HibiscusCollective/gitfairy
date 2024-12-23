@@ -57,8 +57,12 @@
 ## Docker
 !Dockerfile
 
-## AI Config
+# IDE Configuration
+
+## VSCodium/Windsurf
+!gitfairy.code-workspace
 !.windsurfrules
+!.vscode/extensions.json
 
 # Explicitly ignored local files
 .history

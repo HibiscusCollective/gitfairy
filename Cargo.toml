@@ -10,13 +10,14 @@ members = [
 resolver = "2"
 
 [workspace.package]
+name = "Git Fairy"
 version = "0.1.0"
 edition = "2021"
 authors = ["Pierre Fouilloux <pfxdev@noreply.hibiscusgames.com>"]
 description = "Git things done — right from the context menu. No commands, no clutter, just like magic."
 license = "Hippocratic-3.0"
 license-file = "LICENSE"
-repository = "https://codeberg.org/HibiscusCollective/gitnavi"
+repository = "https://github.com/HibiscusCollective/gitfairy"
 
 [workspace.dependencies]
 tokio = { version = "1.35", features = ["full"] }

@@ -2,7 +2,7 @@
 authors = ["Pierre Fouilloux <pfxdev@noreply.codeberg.org>"]
 platforms = ["linux-64", "osx-64", "osx-arm64", "win-64"]
 channels = ["conda-forge"]
-name = "GitNavi"
+name = "Git Fairy"
 description = "Git things done — right from the context menu. No commands, no clutter, just like magic."
 version = "0.1.0"
 license-file = "LICENSE"

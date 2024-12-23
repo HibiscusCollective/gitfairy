@@ -1,2 +1,9 @@
-!**/trunk.yaml
-!**/configs/*.config.js
+*out
+*logs
+*actions
+*notifications
+*tools
+plugins
+user_trunk.yaml
+user.yaml
+tmp
