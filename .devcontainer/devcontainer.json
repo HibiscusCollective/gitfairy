@@ -1,0 +1,17 @@
+{
+  "name": "Git Fairy Development",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "tauri-apps.tauri-vscode",
+        "rust-lang.rust-analyzer",
+        "jdx.mise-vscode"
+      ]
+    }
+  },
+  "postCreateCommand": "pixi install && mise install",
+  "remoteUser": "ContainerUser"
+}

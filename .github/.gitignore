@@ -1,4 +1,0 @@
-# Allow yml templates
-!**/*_TEMPLATE.yml
-!**/*_TEMPLATE.yaml
-!**/*_TEMPLATE.md

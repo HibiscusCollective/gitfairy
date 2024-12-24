@@ -23,6 +23,30 @@ Please try to keep pull requests small and focused on one thing alone. I'd rathe
 Large pull requests may be rejected without review. This is not a statement on the quality of the contribution, it's just a way to protect my time.
 Please don't hesitate to resubmit the change as smaller PRs if that happens.
 
+## Development Environment Options
+
+We support two development environment setups to accommodate different preferences and needs.
+Both options use the same package management tool (pixi) so they should stay in sync naturally.
+When adding a new tool or dependency, ensure it is added using pixi if possible, then fallback to cargo or pnpm if necessary.
+As a last resort using a pixi lifecycle hook to install the dependency is acceptable.
+
+### 1. Pixi Shell (More performant)
+
+- Faster setup and better performance
+- Uses local system resources directly
+- Install dependencies using `pixi install`
+- Use `pixi run bootstrap` to set up a hook to enter the pixi environment whenever your shell enters the project directory.
+- Perfect for solo development and when maximum performance is needed
+
+### 2. Dev Container (Fully reproducible environment)
+
+- Fully isolated and reproducible environment
+- Works consistently across all systems
+- Open in VS Code with Dev Containers extension or VSCodium/Windsurf with the DevPod Containers extension.
+- Ideal for team collaboration and ensuring consistent environments
+
+Choose the option that best fits your workflow and system requirements. Both approaches are fully supported.
+
 ## Any contributions you make will be under the project's license
 
 In short, when you submit code changes, your submissions are understood to be under the same license that covers the project. Feel free to contact the maintainers if that's a concern.

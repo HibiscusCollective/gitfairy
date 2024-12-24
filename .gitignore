@@ -5,16 +5,13 @@
 # Allowed files
 
 ## Git
-!.gitignore
+!**/.gitignore
 !.gitattributes
-
-## GitHub
-!.github/workflows/*.yml
-!.github/*.yml
 
 ## Package management
 !pixi.toml
 !pixi.lock
+!mise.toml
 !package.json
 !pnpm-lock.yaml
 
@@ -34,13 +31,9 @@
 !.mega-linter.yml
 !.secretlintrc.json
 !.yamllint.yml
-!cspell.json
-
-## Pipeline config
-!.azure/pipelines/azure-pipelines.yml
+!.cspell.json
 
 ## Documentation
-!docs/
 !README.md
 !CONTRIBUTING.md
 !LICENSE
