@@ -23,6 +23,7 @@
 !renovate.json
 
 ## Linter configs
+!.trunk/**/*
 !.deepsource.toml
 !.checkov.yml
 !.gitleaks.toml
