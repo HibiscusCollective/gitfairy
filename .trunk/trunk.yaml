@@ -22,7 +22,7 @@ lint:
     - clippy@1.65.0
     - rustfmt@1.65.0
     - actionlint@1.7.7
-    - checkov@3.2.358
+    - checkov@3.2.360
     - git-diff-check
     - gitleaks@8.23.3
     - markdownlint@0.44.0
@@ -32,11 +32,17 @@ lint:
     - prettier@3.4.2
     - svgo@3.3.2
     - taplo@0.9.3
-    - trufflehog@3.88.3
+    - trufflehog@3.88.4
     - yamllint@1.35.1
 actions:
   enabled:
+    - commitlint
+    - commitizen
+    - git-lfs
     - trunk-announce
     - trunk-check-pre-push
     - trunk-fmt-pre-commit
     - trunk-upgrade-available
+tools:
+  enabled:
+    - commitizen@4.3.1
