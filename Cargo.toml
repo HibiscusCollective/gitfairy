@@ -2,7 +2,7 @@
 members = [
   "lib",
   "cli",
-  "ui",
+  "ui/src-tauri",
   "platforms/windows",
   "platforms/macos",
   "platforms/linux",

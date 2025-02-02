@@ -11,6 +11,5 @@ publish = false                                                                 
 
 [dependencies]
 gitnavi = { path = "../../lib" }
-gitnavi-ui = { path = "../../ui" }
-windows = "0.52"                   # For Windows API integration
+windows = "0.52"                 # For Windows API integration
 tokio.workspace = true
