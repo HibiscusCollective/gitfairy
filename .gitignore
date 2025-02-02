@@ -24,6 +24,7 @@
 
 ## Linter configs
 !.trunk/**/*
+!.czrc
 !.deepsource.toml
 !.checkov.yml
 !.gitleaks.toml
@@ -36,6 +37,7 @@
 !.secretlintrc.json
 !.yamllint.yml
 !cspell.json
+!commitlint.config.mjs
 
 ## Pipeline config
 !.azure/pipelines/azure-pipelines.yml
