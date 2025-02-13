@@ -20,3 +20,8 @@
 !src-tauri/icons/*.ico
 !src-tauri/icons/*.icns
 !src-tauri/src/**/*.rs
+
+## pnpm
+
+!pnpm-lock.yaml
+!package.json
