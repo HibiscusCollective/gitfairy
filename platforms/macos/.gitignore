@@ -1,6 +1,0 @@
-# Allow gitignore
-!.gitignore
-
-# Allow rust files
-!Cargo.toml
-!**/*.rs

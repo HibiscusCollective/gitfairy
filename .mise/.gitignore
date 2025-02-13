@@ -1,0 +1,5 @@
+# Task scripts
+!tasks/
+!tasks/**/
+!tasks/**/*.sh
+!tasks/**/*.ps1
