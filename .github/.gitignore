@@ -2,3 +2,6 @@
 !**/*_TEMPLATE.yml
 !**/*_TEMPLATE.yaml
 !**/*_TEMPLATE.md
+
+# Allow workflows
+!workflows/*.yml

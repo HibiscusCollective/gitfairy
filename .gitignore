@@ -2,48 +2,37 @@
 *
 !*/
 
-# Allowed files
+# Allowed
+
+## Subfolders
+!.github/
+!docs/
+!branding/
 
 ## Git
 !.gitignore
 !.gitattributes
 
-## GitHub
-!.github/workflows/*.yml
-!.github/*.yml
-
-## Package management
-!pixi.toml
-!pixi.lock
-!package.json
-!pnpm-lock.yaml
-
 ## Workspace config
+!mise.toml
 !lefthook.yml
 !renovate.json
 
 ## Linter configs
-!.trunk/**/*
+### Commits
 !.czrc
-!.deepsource.toml
-!.checkov.yml
-!.gitleaks.toml
-!.grype.yaml
-!.jscpd.json
-!.markdown-link-check.json
-!.markdownlint-cli2.yaml
-!.markdownlint.yaml
-!.mega-linter.yml
-!.secretlintrc.json
-!.yamllint.yml
-!cspell.json
 !commitlint.config.mjs
 
-## Pipeline config
-!.azure/pipelines/azure-pipelines.yml
+### Markdown
+!.markdownlint.yaml
+!.markdownlint-cli2.yaml
+!.markdown-link-check.json
+
+### Rust
+!.clippy.toml
+!.rustfmt.toml
 
 ## Documentation
-!docs/
 !README.md
 !CONTRIBUTING.md
 !LICENSE
@@ -65,6 +54,4 @@
 
 # Explicitly ignored local files
 .history
-.pixi
 node_modules
-megalinter-reports

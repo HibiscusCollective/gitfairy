@@ -1,0 +1,4 @@
+edition = "2021"
+max_width = 180
+wrap_comments = true
+error_on_line_overflow = true

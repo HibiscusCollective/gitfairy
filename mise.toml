@@ -1,0 +1,5 @@
+[tools]
+lefthook = "1.10.10"
+node = "23.7.0"
+pnpm = "10.3.0"
+rust = "1.84.1"
