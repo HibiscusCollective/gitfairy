@@ -1,6 +1,6 @@
 avoid-breaking-exported-api = false
 doc-valid-idents = ["OS", "GUI"]
-disallowed_names = [
+disallowed-names = [
     "foo",
     "bar",
     "baz",

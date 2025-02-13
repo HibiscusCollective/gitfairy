@@ -14,7 +14,7 @@ runme:
 
 ## Context and problem statement
 
-We need to establish performance requirements that ensure GitNavi remains responsive while respecting upstream API limitations.
+We need to establish performance requirements that ensure GitFairy remains responsive while respecting upstream API limitations.
 The solution must provide reliable benchmarking without compromising user privacy.
 
 ### Requirements
@@ -41,7 +41,7 @@ The solution must provide reliable benchmarking without compromising user privac
 
 #### Git Operations
 
-__Rationale__: GitNavi should maintain performance close to native git operations.
+__Rationale__: GitFairy should maintain performance close to native git operations.
 
 ##### Benchmarks
 
@@ -60,9 +60,9 @@ pub fn git_benchmark(c: &mut Criterion) {
             .expect("Failed to execute git")
     }));
     
-    // Benchmark GitNavi
-    group.bench_function("gitnavi_status", |b| b.iter(|| {
-        gitnavi::git::status()
+    // Benchmark GitFairy
+    group.bench_function("gitfairy_status", |b| b.iter(|| {
+        gitfairy::git::status()
             .expect("Failed to get status")
     }));
     

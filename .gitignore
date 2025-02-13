@@ -45,6 +45,7 @@
 
 ## Rust
 !Cargo.toml
+!Cargo.lock
 
 ## Docker
 !Dockerfile

@@ -1,13 +1,13 @@
-# GitNavi Security Policy
+# GitFairy Security Policy
 
 ## 1. Introduction
 
-This security policy outlines the measures and practices implemented in GitNavi to ensure the protection of user data and system integrity.
+This security policy outlines the measures and practices implemented in GitFairy to ensure the protection of user data and system integrity.
 It focuses on client-side security and privacy-first development practices.
 
 ## 2. Scope and Objectives
 
-This policy applies to the GitNavi desktop application, including:
+This policy applies to the GitFairy desktop application, including:
 
 - Desktop application security
 - Credential management

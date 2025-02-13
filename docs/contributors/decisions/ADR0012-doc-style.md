@@ -73,7 +73,7 @@ We will use the RedHat Documentation Style Guide with Vale CLI for enforcement.
 ```yaml
 StylesPath: styles
 MinAlertLevel: suggestion
-Vocab: Gitnavi
+Vocab: GitFairy
 
 Packages:
   RedHat: https://github.com/redhat-documentation/vale-at-red-hat

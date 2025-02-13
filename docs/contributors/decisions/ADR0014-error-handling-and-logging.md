@@ -66,7 +66,7 @@ __Rationale__: `thiserror` provides ergonomic error definitions while `anyhow` o
 use thiserror::Error;
 
 #[derive(Error, Debug)]
-pub enum GitNaviError {
+pub enum GitFairyError {
     #[error("Git operation failed: {0}")]
     GitError(#[from] git2::Error),
     
