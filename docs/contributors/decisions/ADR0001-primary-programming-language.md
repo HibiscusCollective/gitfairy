@@ -30,6 +30,13 @@ The main pillars are:
 * Strong type system
 * Memory safety guarantees
 
+## Considered Options
+
+* Rust with [tauri](https://tauri.app/), [tokio](https://tokio.rs/), [git2](https://github.com/libgit2/libgit2) and [config](https://github.com/rust-lang/config)
+* Go with [wails](https://wails.app/) and [viper](https://github.com/spf13/viper)
+* Python
+* Nodejs
+
 ## Decision outcomes
 
 Chosen Option: **Rust with [tauri](https://tauri.app/), [tokio](https://tokio.rs/) , [git2](https://github.com/libgit2/libgit2) and [config](https://github.com/rust-lang/config)**
@@ -102,7 +109,7 @@ NodeJS was considered for its strong GUI framework support and JavaScript ecosys
 
 ## More information
 
-* [**ADR0002** toolkit selection](ADR0002-toolkit.md)
+* [**ADR0002** toolkit selection](ADR0002-toolkit-selection.md)
 * [**ADR0003** package management and documentation tooling for Rust](ADR0003-package-management-and-documentation.md)
 * [**ADR0004** workspace management for Rust development](ADR0004-workspace-management.md)
 * [**ADR0006** platform-specific installation for Rust binaries](ADR0006-installers.md)
