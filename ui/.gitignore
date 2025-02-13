@@ -1,19 +1,22 @@
-# Allow gitignore
-!.gitignore
+# Allowed
 
-# Allow rust files
-!Cargo.toml
-!**/*.rs
+## vscode
+!.vscode
+!.vscode/extensions.json
 
-# Allow vscode recommended extensions
-!**/.vscode/extensions.json
+## src
+!src
+!src/assets/*.svg
+!src/**/*.html
+!src/**/*.js
+!src/**/*.css
 
-# Allow tauri files
+## src tauri
+!src-tauri
+!src-tauri/build.rs
 !src-tauri/tauri.conf.json
-!**/*.html
-!**/*.js
-!**/*.css
-!**/*.svg
-!**/*.png
-!**/*.ico
-!**/*.icns
+!src-tauri/capabilities/*.json
+!src-tauri/icons/*.png
+!src-tauri/icons/*.ico
+!src-tauri/icons/*.icns
+!src-tauri/src/**/*.rs
