@@ -6,6 +6,8 @@
 
 ## src
 !src
+!src/**/
+
 !src/assets/*.svg
 !src/**/*.html
 !src/**/*.js
@@ -13,6 +15,10 @@
 
 ## src tauri
 !src-tauri
+!src-tauri/src
+!src-tauri/icons
+!src-tauri/capabilities
+
 !src-tauri/build.rs
 !src-tauri/tauri.conf.json
 !src-tauri/capabilities/*.json

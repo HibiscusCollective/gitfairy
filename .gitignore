@@ -1,58 +1,61 @@
-# Deny all
+## Ignore all by default
 *
 
-# Allowed
+## Allow project modules
+!src
+!src/cli
+!src/lib
+!src/os
+!src/ui
 
-## Subfolders
+## Allow config
 !.github/
-!.mise/
-!docs/
-!branding/
+!.vscode/
 
-## Git
 !.gitignore
 !.gitattributes
 
-## Workspace config
-!mise.toml
-!lefthook.yml
-!renovate.json
+!.windsurfrules
+!.editorconfig
 
-## Linter configs
-### Commits
 !.czrc
 !commitlint.config.mjs
 
-### Markdown
 !.markdownlint.yaml
 !.markdownlint-cli2.yaml
 !.markdown-link-check.json
 
-### Rust
 !.clippy.toml
 !.rustfmt.toml
 
-## Documentation
-!README.md
-!CONTRIBUTING.md
-!LICENSE
-!SECURITY
-!PRIVACY
+!.cspell.json
 
-## Branding
-!branding/*.svg
-!branding/*.png
-
-## Rust
+## Allow package management
+!mise.toml
 !Cargo.toml
 !Cargo.lock
 
-## Docker
-!Dockerfile
+## Allow documentation
+!docs/
+!docs/**/
+!docs/**/*.md
 
-## AI Config
-!.windsurfrules
+!licenses/
+!licenses/*.txt
+!licenses/*.md
 
-# Explicitly ignored local files
-.history
-node_modules
+!LICENSE
+!README.md
+!PRIVACY
+
+## Allow branding and icons
+!branding/
+!branding/*.svg
+!branding/*.png
+
+!icons/
+!icons/*.svg
+!icons/*.png
+!icons/*.ico
+!icons/*.icns
+

@@ -1,7 +1,10 @@
-# Allow yml templates
-!**/*_TEMPLATE.yml
-!**/*_TEMPLATE.yaml
-!**/*_TEMPLATE.md
+## Allow workflows
+!workflows/
+!workflows/*.yaml
 
-# Allow workflows
-!workflows/*.yml
+## Allow renovate config
+!renovate.config.js
+!renovate.json
+
+## Allow github config files
+!CODEOWNERS
