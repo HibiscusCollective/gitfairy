@@ -8,17 +8,18 @@
 !**/src/**/*.rs
 
 ###### Tauri #######
-!src/ui/pnpm-lock.yaml
-!src/ui/**/
-!src/ui/**/*.css
-!src/ui/**/*.js
-!src/ui/**/*.html
-!src/ui/**/*.json
-# LFS/Assets
-!src/ui/**/*.png
-!src/ui/**/*.svg
-!src/ui/**/*.ico
-!src/ui/**/*.icns
+!*.css
+!*.js
+!*.html
+!*.json
+!pnpm-lock.yaml
+
+!src/ui/
+!src/ui/.vscode
+!src/ui/src/
+!src/ui/src/assets
+!src/ui/src-tauri/
+!src/ui/src-tauri/**/
 
 ##### Linters ######
 !.linters
@@ -42,20 +43,25 @@
 !README.md
 
 ##### Branding #####
-!branding
-!branding/*.svg
-!branding/*.png
+!branding/
 
 #### Workspace #####
+!.editorconfig
 !.gitignore
 !.gitattributes
+!.lefthook.yml
 !mise.toml
 
 ##### Pipeline #####
 !.github
-!.mise
-!.lefthook.yml
+!.github/workflows
+# Github Actions
+!CODEOWNERS
+!renovate.yaml
 !renovate.json
+!renovate.config.js
+!rust-lint.yml
+!scorecard.yaml
 
 ######## AI ########
 !.windsurfrules
@@ -66,5 +72,12 @@
 !ui
 !cli
 
+#### LFS Assets ####
+!**/*.png
+!**/*.svg
+!**/*.ico
+!**/*.icns
+
 # Explicit Ignores #
+**/node_modules
 src/ui/src-tauri/gen/schemas

@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   branchPrefix: "renovate-bot/",
   username: "hibiscus-collective-renovate",
   gitAuthor: "Renovate Bot <bot@renovateapp.com>",
