@@ -3,3 +3,17 @@ lefthook = "1.10.10"
 node = "23.7.0"
 pnpm = "10.3.0"
 rust = "1.84.1"
+
+[task_config]
+includes = [
+    "src/cli/.tasks.toml",
+    "src/ui/.tasks.toml",
+    "src/os/.tasks.toml",
+    "src/lib/.tasks.toml",
+]
+
+[tasks.fmt]
+depends = ["fmt:*"]
+
+[tasks.lint]
+depends = ["lint:*"]

@@ -1,61 +1,69 @@
-## Ignore all by default
+##### Deny all #####
 *
 
-## Allow project modules
-!src
-!src/cli
-!src/lib
-!src/os
-!src/ui
+###### Rust ########
+!**/Cargo.toml
+!**/Cargo.lock
+!**/src
+!**/src/**/*.rs
 
-## Allow config
-!.github/
-!.vscode/
+###### Tauri #######
+!src/ui/pnpm-lock.yaml
+!src/ui/**/
+!src/ui/**/*.css
+!src/ui/**/*.js
+!src/ui/**/*.html
+!src/ui/**/*.json
+# LFS/Assets
+!src/ui/**/*.png
+!src/ui/**/*.svg
+!src/ui/**/*.ico
+!src/ui/**/*.icns
 
-!.gitignore
-!.gitattributes
-
-!.windsurfrules
-!.editorconfig
-
+##### Linters ######
+# Commits
 !.czrc
 !commitlint.config.mjs
-
+# Markdown
 !.markdownlint.yaml
 !.markdownlint-cli2.yaml
 !.markdown-link-check.json
-
+# Spelling
+!.cspell.json
+# Rust
 !.clippy.toml
 !.rustfmt.toml
 
-!.cspell.json
-
-## Allow package management
-!mise.toml
-!Cargo.toml
-!Cargo.lock
-
-## Allow documentation
-!docs/
+## Documentation ###
+!docs
 !docs/**/
 !docs/**/*.md
-
-!licenses/
-!licenses/*.txt
-!licenses/*.md
-
-!LICENSE
 !README.md
-!PRIVACY
 
-## Allow branding and icons
-!branding/
+##### Branding #####
+!branding
 !branding/*.svg
 !branding/*.png
 
-!icons/
-!icons/*.svg
-!icons/*.png
-!icons/*.ico
-!icons/*.icns
+#### Workspace #####
+!.gitignore
+!.gitattributes
+!mise.toml
 
+##### Pipeline #####
+!.github
+!.mise
+!.lefthook.yml
+!renovate.json
+
+######## AI ########
+!.windsurfrules
+
+##### Modules ######
+!lib
+!os
+!ui
+!cli
+
+# Explicit Ignores #
+src/ui/src-tauri/gen/schemas
