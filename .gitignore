@@ -21,6 +21,7 @@
 !src/ui/**/*.icns
 
 ##### Linters ######
+!.linters
 # Commits
 !.czrc
 !commitlint.config.mjs
