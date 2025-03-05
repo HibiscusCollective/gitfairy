@@ -1,5 +1,5 @@
 [workspace]
-members = ["lib", "cli", "ui/src-tauri", "os"]
+members = ["src/lib", "src/cli", "src/ui/src-tauri", "src/os"]
 resolver = "2"
 
 [workspace.package]
@@ -11,13 +11,13 @@ license = "AGPL-3.0-or-later"
 repository = "https://www.github.com/HibiscusCollective/gitfairy"
 
 [workspace.dependencies]
-libgitfairy = { path = "./lib" }
-libgitfairy-os = { path = "./os", features = [] }
+libgitfairy = { path = "./src/lib" }
+libgitfairy-os = { path = "./src/os", features = [] }
 # External dependencies
 tokio = { version = "1.35", features = ["full"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 # Dev dependencies
 cargo-audit = "0.21.1"
-clippy = "0.0.302"
-rustfmt = "0.10.0"
+rustfmt = "1.8.0"
+clippy = "1.85.0"
