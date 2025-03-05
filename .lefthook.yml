@@ -1,3 +1,10 @@
+assert_lefthook_installed: true
 
-pre-commit:
+post-merge:
+  piped: true
+  jobs:
+    - name: Mise update
+      id: mise-update
+      run: mise install
+      interactive: true
   
