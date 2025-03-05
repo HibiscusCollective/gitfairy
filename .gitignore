@@ -22,12 +22,12 @@
 !src/ui/src-tauri/**/
 
 ##### Linters ######
+!.config/
 !.linters
 # Commits
 !.czrc
 !commitlint.config.mjs
 # Markdown
-!.markdownlint.yaml
 !.markdownlint-cli2.yaml
 !.markdown-link-check.json
 # Spelling
@@ -50,7 +50,8 @@
 !.gitignore
 !.gitattributes
 !.lefthook.yml
-!mise.toml
+!.mise.toml
+!.tasks.toml
 
 ##### Pipeline #####
 !.github

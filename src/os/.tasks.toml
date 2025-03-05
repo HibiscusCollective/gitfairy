@@ -1,0 +1,11 @@
+["fmt:os"]
+description = "Runs formatters on the code"
+depends = ["fmt:os"]
+
+["lint:os"]
+description = "Runs linters on the code"
+depends = ["mdlint src/os/**/*.md"]
+
+["lint:os:fix"]
+description = "Fix all linting problems"
+depends = ["mdlint:fix src/os/**/*.md"]

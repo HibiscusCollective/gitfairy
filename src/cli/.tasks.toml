@@ -1,0 +1,11 @@
+["fmt:cli"]
+description = "Runs formatters on the code"
+depends = ["fmt:cli"]
+
+["lint:cli"]
+description = "Runs linters on the code"
+depends = ["mdlint src/cli/**/*.md"]
+
+["lint:cli:fix"]
+description = "Fix all linting problems"
+depends = ["mdlint src/cli/**/*.md"]

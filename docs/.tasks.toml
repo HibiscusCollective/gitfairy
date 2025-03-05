@@ -1,0 +1,13 @@
+["fmt:docs"]
+description = "Format the documentation"
+depends = ["lint:docs:fix"]
+
+["lint:docs"]
+description = "Lint the documentation"
+dir = "./docs"
+run = "markdownlint-cli2 --config {{vars.mdlint_config}} '**/*.md'"
+
+["lint:docs:fix"]
+description = "Fix all linting problems in the documentation"
+dir = "./docs"
+run = "markdownlint-cli2 --config {{vars.mdlint_config}} --fix '**/*.md'"
