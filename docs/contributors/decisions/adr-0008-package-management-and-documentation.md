@@ -4,7 +4,7 @@ runme:
   version: v3
 ---
 
-# D0003 - Package Management and Documentation
+# D0008 - Package Management and Documentation
 
 ## Status
 
@@ -140,7 +140,7 @@ __Rationale__: CodeBerg Wiki provides a collaborative platform for contributor d
 
 ## Related Decisions
 
-- [D0001: Rust ecosystem package management](D0001-Language.md)
-- [D0002: Integration with selected toolkit](D0002-Toolkit.md)
-- [D0004: Workspace management for package handling](D0004-WorkspaceManagement.md)
-- [D0007: Documentation style and standards](D0007-DocStyle.md)
+- [ADR 0001: Primary Programming Language](adr-0001-primary-programming-language.md)
+- [ADR 0002: Linting and Formatting Tools](adr-0002-linting-and-formatting-tools.md)
+- [ADR 0009: Workspace Management](adr-0009-workspace-management.md)
+- [ADR 0012: Documentation Style](adr-0012-doc-style.md)

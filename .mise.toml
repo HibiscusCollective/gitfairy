@@ -4,6 +4,7 @@ markdownlint-cli2 = "0.17.2"
 gh = "2.67.0"
 node = "23.9.0"
 pnpm = "10.5.2"
+"npm:markdown-link-check" = "3.13.6"
 
 [task_config]
 includes = [
@@ -34,14 +35,18 @@ depends = ["lint:*:fix", "mdlint:fix *.md"]
 [tasks."markdown:fmt"]
 description = "Format markdown files"
 usage = 'arg "<file>" var=#true default="*.md"'
+quiet = true
 run = '''
   mise run mdlint:fix {{arg(name="file")}}
 '''
 
 [tasks."markdown:lint"]
+description = "Lint markdown files"
 usage = 'arg "<file>" var=#true default="*.md"'
+quiet = true
 run = '''
   mise run mdlint {{arg(name="file")}}
+  mise run mdlinkcheck {{arg(name="file")}}
 '''
 
 ## Internal Tasks - Prefer running the tasks above instead ##
@@ -55,3 +60,8 @@ run = 'markdownlint-cli2 --config {{vars.mdlint_config}} {{arg(name="file")}}'
 hide = true
 usage = 'arg "<file>" var=#true default="*.md"'
 run = 'mise run mdlint {{arg(name="file")}} -- --fix'
+
+[tasks.mdlinkcheck]
+hide = true
+usage = 'arg "<file>" var=#true default="*.md"'
+run = 'markdown-link-check {{arg(name="file")}}'

@@ -1,4 +1,4 @@
-# ADR0002 - Toolkit selection
+# ADR0007 - Continuous Integration and Deployment
 
 **Authors**: @pfouilloux
 
@@ -108,7 +108,12 @@ Chosen options:
 
 ## More Information
 
-* [**ADR0001** Primary Programming Language](ADR0001-primary-programming-language.md)
-* [**ADR0003** Package management and documentation](ADR0003-package-management-and-documentation.md)
-* [**ADR0004** Workspace management](ADR0004-workspace-management.md)
-* [**ADR0007** Documentation style and linting tools](ADR0007-doc-style.md)
+* [**ADR0001** Primary Programming Language](adr-0001-primary-programming-language.md)
+* [**ADR0002** Linting and Formatting Tools](adr-0002-linting-and-formatting-tools.md)
+* [**ADR0003** Quality and Testing Tools](adr-0003-quality-and-testing-tools.md)
+* [**ADR0004** Release Management](adr-0004-release-management.md)
+* [**ADR0005** Security Vulnerability Scanning Tools](adr-0005-security-vulnerability-scanning-tools.md)
+* [**ADR0006** Supply Chain Security and License Compliance](adr-0006-supply-chain-security-and-license-compliance.md)
+* [**ADR0008** Package Management and Documentation](adr-0008-package-management-and-documentation.md)
+* [**ADR0009** Workspace Management](adr-0009-workspace-management.md)
+* [**ADR0012** Documentation Style](adr-0012-doc-style.md)

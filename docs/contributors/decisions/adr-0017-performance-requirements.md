@@ -1,9 +1,3 @@
----
-runme:
-  id: 01JF27KQMZ8P4XVBT6M6QQJ555
-  version: v3
----
-
 # D0012 - Performance Requirements
 
 ## Status

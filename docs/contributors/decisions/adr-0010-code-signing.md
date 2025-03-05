@@ -1,9 +1,3 @@
----
-runme:
-  id: 01JFHF2KCQMVP5JXDQQ4WBHG8T
-  version: v3
----
-
 # Code Signing Solution
 
 ## Status
@@ -95,9 +89,9 @@ We will use a combination of Sigstore for general code signing and platform-spec
 
 ## Related Decisions
 
-- [D0002: Integration with CI/CD toolkit](D0002-Toolkit.md)
-- [D0004: Workspace management for signing keys](D0004-WorkspaceManagement.md)
-- [D0006: Platform-specific installation signing](D0006-Installers.md)
+- [ADR 0002: Integration with CI/CD toolkit](adr-0002-linting-and-formatting-tools.md)
+- [ADR 0004: Workspace management for signing keys](adr-0009-workspace-management.md)
+- [ADR 0006: Platform-specific installation signing](adr-0011-installers.md)
 
 ## Future Growth Plan
 

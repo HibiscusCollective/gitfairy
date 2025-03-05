@@ -4,7 +4,7 @@ runme:
   version: v3
 ---
 
-# D0013 - Release Management
+# D0004 - Release Management
 
 ## Status
 
@@ -210,9 +210,9 @@ module.exports = {
 
 ## Related Decisions
 
-- [D0005: Code Signing](D0005-CodeSigning.md)
-- [D0011: Security Architecture](D0011-SecurityArchitecture.md)
-- [D0012: Performance Requirements](D0012-PerformanceRequirements.md)
+- [ADR 0010: Code Signing](adr-0010-code-signing.md)
+- [ADR 0016: Security Architecture](adr-0016-security-architecture.md)
+- [ADR 0017: Performance Requirements](adr-0017-performance-requirements.md)
 
 ## Other options considered
 

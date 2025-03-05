@@ -1,9 +1,3 @@
----
-runme:
-  id: 01JFHGQJZ4QBXCW8NZPJ4KQHMT
-  version: v3
----
-
 # Platform-Specific Installation Solutions
 
 ## Status
@@ -133,9 +127,9 @@ We will use Tauri's bundler as the base, complemented by platform-specific tools
 
 ## Related Decisions
 
-- [D0001: Rust-based installation process](D0001-Language.md)
-- [D0004: Workspace management for builds](D0004-WorkspaceManagement.md)
-- [D0005: Code signing for installers](D0005-CodeSigning.md)
+- [ADR 0001: Primary Programming Language](adr-0001-primary-programming-language.md)
+- [ADR 0009: Workspace Management](adr-0009-workspace-management.md)
+- [ADR 0016: Security Architecture](adr-0016-security-architecture.md)
 
 ## Other options considered
 

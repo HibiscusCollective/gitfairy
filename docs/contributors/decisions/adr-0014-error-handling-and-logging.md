@@ -1,9 +1,3 @@
----
-runme:
-  id: 01JF24KQMZ8P4XVBT6M6QQJ552
-  version: v3
----
-
 # D0009 - Error Handling and Logging
 
 ## Status
@@ -222,8 +216,8 @@ pub fn workspace_operation(path: &str, config: &Value) {
 
 ## Related Decisions
 
-- [D0001: Language](D0001-Language.md)
-- [D0008: Testing Strategy](D0008-TestingStrategy.md)
+- [D0001: Language](adr-0001-primary-programming-language.md)
+- [D0013: Testing Strategy](adr-0013-testing-strategy.md)
 
 ## Other options considered
 

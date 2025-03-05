@@ -1,9 +1,3 @@
----
-runme:
-  id: 01JFHKC5QJNZ0XBWP4VDQG8RMT
-  version: v3
----
-
 # Documentation Style and Linting
 
 ## Status
@@ -134,9 +128,9 @@ documentation:
 
 ## Related Decisions
 
-- [D0002: Integration with linting toolkit](D0002-Toolkit.md)
-- [D0003: Documentation tooling and workflow](D0003-PackageAndDocs.md)
-- [D0004: Workspace management for docs](D0004-WorkspaceManagement.md)
+- [D0002: Linting and Formatting Tools](adr-0002-linting-and-formatting-tools.md)
+- [D0008: Package Management and Documentation](adr-0008-package-management-and-documentation.md)
+- [D0009: Workspace Management](adr-0009-workspace-management.md)
 
 ## Other options considered
 

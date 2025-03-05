@@ -1,9 +1,3 @@
----
-runme:
-  id: 01JF26KQMZ8P4XVBT6M6QQJ554
-  version: v3
----
-
 # D0011 - Security Architecture
 
 ## Status
@@ -229,14 +223,13 @@ impl UpdateConfig {
 
 ## Security and Privacy Policies
 
-- [Security Policy](SECURITY)
-- [Privacy Policy](PRIVACY)
+- [Security Policy](https://github.com/HibiscusCollective/.github/blob/main/docs/SECURITY.md)
 
 ## Related Decisions
 
-- [D0005: Code Signing](D0005-CodeSigning.md)
-- [D0006: Installers](D0006-Installers.md)
-- [D0009: Error Handling](D0009-ErrorHandlingAndLogging.md)
+- [D0005: Code Signing](adr-0010-code-signing.md)
+- [D0006: Installers](adr-0011-installers.md)
+- [D0009: Error Handling](adr-0014-error-handling-and-logging.md)
 
 ## Other options considered
 

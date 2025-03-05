@@ -1,9 +1,3 @@
----
-runme:
-  id: 01JF25KQMZ8P4XVBT6M6QQJ553
-  version: v3
----
-
 # D0010 - UI/UX Standards
 
 ## Status
@@ -263,9 +257,9 @@ __Rationale__: ICU4X provides comprehensive i18n support in Rust, while Fluent o
 
 ## Related Decisions
 
-- [D0001: Language](D0001-Language.md)
-- [D0002: Toolkit](D0002-Toolkit.md)
-- [D0009: Error Handling](D0009-ErrorHandlingAndLogging.md)
+- [D0001: Language](adr-0001-primary-programming-language.md)
+- [D0002: Toolkit](adr-0002-linting-and-formatting-tools.md)
+- [D0009: Error Handling](adr-0014-error-handling-and-logging.md)
 
 ## Implementation Notes
 

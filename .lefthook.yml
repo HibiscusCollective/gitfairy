@@ -24,8 +24,8 @@ pre-commit:
                 - name: Docs > Format markdown
                   id: fmt-docs-markdown
                   root: src/docs
-                  glob: "**/*.md"
-                  run: mise run markdown:fmt {staged_files}
+                  glob: "src/docs/**/*.md"
+                  run: mise run mdlint:fix {staged_files}
           - name: Lint
             id: lint-docs
             group:
@@ -34,8 +34,8 @@ pre-commit:
                 - name: Docs > Lint markdown
                   id: lint-docs-markdown
                   root: src/docs
-                  glob: "**/*.md"
-                  run: mise run markdown:lint {staged_files}
+                  glob: "src/docs/**/*.md"
+                  run: mise run mk {staged_files}
     - name: Cli
       id: pre-commit-cli
       group:
@@ -49,8 +49,8 @@ pre-commit:
                 - name: Cli > Format markdown
                   id: fmt-cli-markdown
                   root: src/cli
-                  glob: "**/*.md"
-                  run: mise run markdown:fmt {staged_files}
+                  glob: "src/cli/**/*.md"
+                  run: mise run mdlint:fix {staged_files}
           - name: Lint
             id: lint-cli
             group:
@@ -59,8 +59,8 @@ pre-commit:
                 - name: Cli > Lint markdown
                   id: lint-cli-markdown
                   root: src/cli
-                  glob: "**/*.md"
-                  run: mise run markdown:lint {staged_files}
+                  glob: "src/cli/**/*.md"
+                  run: mise run mk {staged_files}
     - name: Lib
       id: pre-commit-lib
       group:
@@ -74,8 +74,8 @@ pre-commit:
                 - name: Lib > Format markdown
                   id: fmt-lib-markdown
                   root: src/lib
-                  glob: "**/*.md"
-                  run: mise run markdown:fmt {staged_files}
+                  glob: "src/lib/**/*.md"
+                  run: mise run mdlint:fix {staged_files}
           - name: Lint
             id: lint-lib
             group:
@@ -84,8 +84,8 @@ pre-commit:
                 - name: Lib > Lint markdown
                   id: lint-lib-markdown
                   root: src/lib
-                  glob: "**/*.md"
-                  run: mise run markdown:lint {staged_files}
+                  glob: "src/lib/**/*.md"
+                  run: mise run mk {staged_files}
     - name: OS
       id: pre-commit-os
       group:
@@ -99,8 +99,8 @@ pre-commit:
                 - name: OS > Format markdown
                   id: fmt-markdown
                   root: src/ui
-                  glob: "**/*.md"
-                  run: mise run markdown:fmt {staged_files}
+                  glob: "src/os/**/*.md"
+                  run: mise run mdlint:fix {staged_files}
           - name: Lint
             id: lint-os
             group:
@@ -109,8 +109,8 @@ pre-commit:
                 - name: OS > Lint markdown
                   id: lint-os-markdown
                   root: src/os
-                  glob: "**/*.md"
-                  run: mise run markdown:lint {staged_files}
+                  glob: "src/os/**/*.md"
+                  run: mise run mk {staged_files}
     - name: UI
       id: pre-commit-ui
       group:
@@ -124,18 +124,23 @@ pre-commit:
                 - name: UI > Format markdown
                   id: fmt-markdown
                   root: src/ui
-                  glob: "**/*.md"
-                  run: mise run markdown:fmt {staged_files}
+                  glob: "src/ui/**/*.md"
+                  run: mise run mdlint:fix {staged_files}
           - name: Lint
             id: lint-ui
             group:
               parallel: true
               jobs:
-                - name: UI > Lint markdown
+                - name: Lint markdown
                   id: lint-markdown
                   root: src/ui
-                  glob: "**/*.md"
-                  run: mise run markdown:lint {staged_files}
+                  glob: "src/ui/**/*.md"
+                  run: mise run mdlint {staged_files}
+                - name: Check markdown links  
+                  id: check-markdown-links
+                  root: src/ui
+                  glob: "src/ui/**/*.md"
+                  run: mise run mdlinkcheck {staged_files}
     - name: Other
       id: pre-commit-other
       group:
@@ -149,7 +154,7 @@ pre-commit:
                 - name: Other > Format markdown
                   id: fmt-other-markdown
                   glob: "*.md"
-                  run: mise run markdown:fmt {staged_files}
+                  run: mise run mdlint:fix *.md
           - name: Lint
             id: lint-other
             group:
@@ -158,4 +163,4 @@ pre-commit:
                 - name: Other > Lint markdown
                   id: lint-other-markdown
                   glob: "*.md"
-                  run: mise run markdown:lint {staged_files}
+                  run: mise run mdlinkcheck *.md

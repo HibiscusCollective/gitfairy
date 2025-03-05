@@ -1,9 +1,3 @@
----
-runme:
-  id: 01JF23KQMZ8P4XVBT6M6QQJ551
-  version: v3
----
-
 # D0008 - Testing Strategy
 
 ## Status
@@ -238,9 +232,9 @@ Linux:
 
 ## Related Decisions
 
-- [D0001: Rust development environment](D0001-Language.md)
-- [D0004: Workspace management](D0004-WorkspaceManagement.md)
-- [D0006: Platform-specific installation](D0006-Installers.md)
+- [D0001: Primary Programming Language](adr-0001-primary-programming-language.md)
+- [D0009: Workspace Management](adr-0009-workspace-management.md)
+- [D0011: Installers](adr-0011-installers.md)
 
 ## Other options considered
 

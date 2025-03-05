@@ -32,19 +32,19 @@ The main pillars are:
 
 ## Considered Options
 
-* Rust with [tauri](https://tauri.app/), [tokio](https://tokio.rs/), [git2](https://github.com/libgit2/libgit2) and [config](https://github.com/rust-lang/config)
+* Rust with [tauri](https://tauri.app/), [tokio](https://tokio.rs/), [git2](https://github.com/libgit2/libgit2) and [config](https://github.com/rust-cli/config-rs)
 * Go with [wails](https://wails.app/) and [viper](https://github.com/spf13/viper)
 * Python
 * Nodejs
 
 ## Decision outcomes
 
-Chosen Option: **Rust with [tauri](https://tauri.app/), [tokio](https://tokio.rs/) , [git2](https://github.com/libgit2/libgit2) and [config](https://github.com/rust-lang/config)**
+Chosen Option: **Rust with [tauri](https://tauri.app/), [tokio](https://tokio.rs/) , [git2](https://github.com/libgit2/libgit2) and [config](https://github.com/rust-cli/config-rs)**
 
 * [tauri](https://tauri.app/) will drive our UI components, popups, modals, configuration, etc.
 * [tokio](https://tokio.rs/) will drive our async capabilities.
 * [git2](https://docs.rs/git2/latest/git2/) will interact with VCS, this handles auth and all the git operations we'll need.
-* [config](https://crates.io/crates/config) will read and write configuration files. This gives us the flexibility to read and write different formats and layer them in various ways.
+* [config](https://github.com/rust-cli/config-rs) will read and write configuration files. This gives us the flexibility to read and write different formats and layer them in various ways.
 
 ## Consequences
 
@@ -109,7 +109,8 @@ NodeJS was considered for its strong GUI framework support and JavaScript ecosys
 
 ## More information
 
-* [**ADR0002** toolkit selection](ADR0002-toolkit-selection.md)
-* [**ADR0003** package management and documentation tooling for Rust](ADR0003-package-management-and-documentation.md)
-* [**ADR0004** workspace management for Rust development](ADR0004-workspace-management.md)
-* [**ADR0006** platform-specific installation for Rust binaries](ADR0006-installers.md)
+* [**ADR0002** Linting and Formatting Tools](adr-0002-linting-and-formatting-tools.md)
+* [**ADR0004** Release Management](adr-0004-release-management.md)
+* [**ADR0008** Package Management and Documentation](adr-0008-package-management-and-documentation.md)
+* [**ADR0009** Workspace Management](adr-0009-workspace-management.md)
+* [**ADR0011** Installers](adr-0011-installers.md)
