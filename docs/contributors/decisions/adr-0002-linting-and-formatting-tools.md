@@ -6,7 +6,7 @@
 
 ## Context and Problem Statement
 
-We want to maintain a baseline level of quality and consistency in coding style, avoid common mistakes and promote best practices. Typically, long style guides and documentation are ineffective as they require a lot of mental effort and time to read and understand. Changes are difficult to communicate, and maintaining the spec is time consuming. This is amplified in a distributed team of voluntary contributors. Therefore we need automated tools to analyse the code in real time, identify potential issues and suggest improvements. We also need a more comprehensive set of validations to run prior to each commit and in the CI/CD pipeline for each pull request.
+We want to maintain a baseline level of quality and consistency in coding style, avoid common mistakes and promote best practices. Typically, long style guides and documentation are ineffective as they require a lot of mental effort and time to read and understand. Changes are difficult to communicate, and maintaining the spec is time consuming. This is amplified in a distributed team of voluntary contributors. Therefore we need automated tools to analyze the code in real time, identify potential issues and suggest improvements. We also need a more comprehensive set of validations to run prior to each commit and in the CI/CD pipeline for each pull request.
 
 ## Decision Drivers
 

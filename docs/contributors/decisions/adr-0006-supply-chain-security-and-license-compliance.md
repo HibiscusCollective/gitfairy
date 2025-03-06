@@ -29,7 +29,7 @@ Specifically, we need to address:
 ## Considered Options
 
 * Manual dependency review and license tracking
-* Dependency lockfiles with minimal automation
+* Dependency lock files with minimal automation
 * Automated FOSS tools integration (REUSE, ORT, FOSSology, Renovate)
 * Fully automated supply chain security and license compliance system
 * Third-party compliance management service
@@ -60,7 +60,7 @@ Chosen option: "Automated FOSS tools integration (REUSE, ORT, FOSSology, Renovat
 * Bad, because it may lead to inconsistent reviews
 * Bad, because it lacks continuous monitoring
 
-### Dependency lockfiles with minimal automation
+### Dependency lock files with minimal automation
 
 * Good, because it ensures reproducible builds
 * Good, because it prevents unexpected dependency changes

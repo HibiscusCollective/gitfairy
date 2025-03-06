@@ -12,7 +12,7 @@ Modern projects are inherently polyglot even if this is limited to build pipelin
 
 ## Decision Drivers
 
-* Documentation should be gramatically correct, correctly spelled, and be consistent in style.
+* Documentation should be grammatically correct, correctly spelled, and be consistent in style.
 * We need a way to monitor code quality and security and be able to provide proof to assure our users we are doing the right thing.
 * We should clearly communicate changes and update with minimal additional developer effort.
 * Our tools should be modern and actively maintained so we can be confident in their reliability.
@@ -148,7 +148,7 @@ Rust-specific tools like grcov and tarpaulin that generate coverage reports loca
 
 ### Codacy Community Edition
 
-Codecy is a code quality platform with an open source Community Edition.
+Codacy is a code quality platform with an open source Community Edition.
 
 * Good, because it's fully open source (AGPLv3)
 * Good, because it provides comprehensive code quality metrics

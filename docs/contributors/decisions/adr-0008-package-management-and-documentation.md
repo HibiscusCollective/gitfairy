@@ -493,8 +493,8 @@ jobs:
 
 ## Related Decisions
 
-* [ADR 0001: Primary Programming Language](adr-0001-primary-programming-language.md)
-* [ADR 0002: Linting and Formatting Tools](adr-0002-linting-and-formatting-tools.md)
-* [ADR 0007: Continuous Integration and Deployment](adr-0007-continuous-integration-and-deployment.md)
-* [ADR 0009: Workspace Management](adr-0009-workspace-management.md)
-* [ADR 0012: Documentation Style](adr-0012-doc-style.md)
+* [ADR-0001: Primary Programming Language](adr-0001-primary-programming-language.md)
+* [ADR-0002: Linting and Formatting Tools](adr-0002-linting-and-formatting-tools.md)
+* [ADR-0007: Continuous Integration and Deployment](adr-0007-continuous-integration-and-deployment.md)
+* [ADR-0009: Workspace Management](adr-0009-workspace-management.md)
+* [ADR-0012: Documentation Style](adr-0012-doc-style.md)
