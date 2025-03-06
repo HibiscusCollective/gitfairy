@@ -1,49 +1,108 @@
----
-runme:
-  id: 01JF28KQMZ8P4XVBT6M6QQJ556
-  version: v3
----
+# **ADR-0004** Release Management
 
-# D0004 - Release Management
+**Author**: @pfouilloux
 
-## Status
+![Accepted](https://img.shields.io/badge/status-accepted-success) ![Date](https://img.shields.io/badge/Date-20_Dec_2024-lightblue)
 
-- Status: Accepted
-- Date: 20 December 2024
-- Driver: @pfouilloux
-
-## Context and problem statement
+## Context and Problem Statement
 
 We need a robust release management strategy that automates versioning and changelog generation while maintaining high quality standards.
 The solution must support GitOps workflows and provide clear release criteria.
 
-### Requirements
+## Decision Drivers
 
-#### Must Have
+* Automated semantic versioning
+* Conventional commits support
+* Changelog automation
+* GitOps workflow integration
+* Security release handling
+* Release notes generation
+* Migration guides (nice to have)
+* Beta channels (nice to have)
+* Release metrics (nice to have)
+* Rollback procedures (nice to have)
 
-- Automated semver
-- Conventional commits
-- Changelog automation
-- GitOps workflow
-- Security releases
-- Release notes
+## Considered Options
 
-#### Nice to Have
+* Manual Release Process
+* Release Trains
+* Continuous Deployment
+* Changesets with GitOps Workflow
 
-- Migration guides
-- Beta channels
-- Release metrics
-- Rollback procedures
+## Decision Outcome
 
-## Decision outcomes
+Chosen option: "Changesets with GitOps Workflow", because it provides a comprehensive solution for version management and changelog generation while supporting automated releases based on commit types and security requirements.
 
-### Version Management
+### Consequences
 
-#### Implementation: Changesets
+* Good, because it automates version management and changelog generation
+* Good, because it supports GitOps workflows
+* Good, because it provides clear release criteria
+* Good, because it handles security releases appropriately
+* Bad, because it may introduce complexity in the release process
+* Bad, because it requires additional tooling and configuration
 
-__Rationale__: [Changesets](https://github.com/changesets/changesets) provides a comprehensive solution for version management and changelog generation.
+## Pros and Cons of the Options
 
-##### Configuration
+### Changesets with GitOps Workflow
+
+* Good, because it automates version bumps based on conventional commits
+* Good, because it generates comprehensive changelogs with minimal effort
+* Good, because it integrates seamlessly with CI/CD pipelines
+* Good, because it supports monorepo architectures with interdependent packages
+* Good, because it provides a clear audit trail for all changes
+* Good, because it enables immediate security patch releases
+* Good, because it reduces human error in version management
+* Bad, because it requires developers to learn the changeset format
+* Bad, because it adds an additional step to the PR process
+* Bad, because it may require custom configuration for complex projects
+
+### Manual Release Process
+
+* Good, because it provides direct control
+* Good, because it allows flexible timing
+* Good, because it has a simple workflow
+* Good, because it enables visual verification
+* Good, because it allows easy rollback
+* Bad, because it introduces human error risk
+* Bad, because it is time consuming
+* Bad, because it can be inconsistent
+* Bad, because it has poor automation
+* Bad, because it can lead to version conflicts
+
+### Release Trains
+
+* Good, because it provides a predictable schedule
+* Good, because it enables feature batching
+* Good, because it promotes team alignment
+* Good, because it establishes clear deadlines
+* Good, because it facilitates version planning
+* Bad, because it can cause release delays
+* Bad, because it may hold back features
+* Bad, because it can create schedule pressure
+* Bad, because it requires complex branching
+* Bad, because it can lead to integration challenges
+
+### Continuous Deployment
+
+* Good, because it enables fast delivery
+* Good, because it provides quick feedback
+* Good, because it has a simple process
+* Good, because code is always releasable
+* Good, because it enforces automated testing
+* Bad, because it introduces quality risks
+* Bad, because it can lead to version chaos
+* Bad, because it may cause user fatigue
+* Bad, because it is resource intensive
+* Bad, because it can create stability concerns
+
+## More Information
+
+### Implementation Details
+
+**Version Management with Changesets**
+
+[Changesets](https://github.com/changesets/changesets) provides a comprehensive solution for version management and changelog generation.
 
 ```jsonc
 // .changeset/config.json
@@ -63,13 +122,7 @@ __Rationale__: [Changesets](https://github.com/changesets/changesets) provides a
 }
 ```
 
-### Release Automation
-
-#### GitOps Workflow
-
-__Rationale__: Automated releases based on commit types and security requirements.
-
-##### Release Triggers
+**Release Automation with GitOps Workflow**
 
 ```yaml
 name: Release Management
@@ -106,48 +159,42 @@ jobs:
           # Trigger immediate release
 ```
 
-### Version Criteria
+**Version Criteria**
 
-#### Automatic Version Bumps
-
-1. __Major Version (1.x.x)__
+1. **Major Version (1.x.x)**
    - Breaking changes
    - API modifications
    - Major UI changes
    - Immediate release
 
-2. __Minor Version (x.1.x)__
+2. **Minor Version (x.1.x)**
    - New features
    - Non-breaking changes
    - Deprecations
    - Weekly release batch
 
-3. __Patch Version (x.x.1)__
+3. **Patch Version (x.x.1)**
    - Bug fixes
    - Security patches
    - Documentation
    - Immediate for security/hotfix
 
-### Release Schedule
+**Release Schedule**
 
-#### Pre-1.0.0 Phase
-
+*Pre-1.0.0 Phase*
 - No fixed schedule
 - Release on significant features
 - Security patches immediate
 - Version updates per PR
 
-#### Post-1.0.0 Phase
-
+*Post-1.0.0 Phase*
 - Weekly releases (Monday)
 - Security patches immediate
 - Hotfixes immediate
 - Major versions immediate
 - Minor versions batched
 
-### Changelog Management
-
-#### Conventional Changelog Integration
+**Changelog Management with Conventional Commits**
 
 ```javascript
 // .commitlintrc.js
@@ -155,117 +202,60 @@ module.exports = {
   extends: ['@commitlint/config-conventional'],
   rules: {
     'scope-enum': [2, 'always', [
-      'core',
+      'cli',
+      'lib',
+      'os',
       'ui',
-      'git',
-      'security',
-      'perf',
-      'deps'
+      'src',
+      'workspace',
+      'linting',
+      'decisions',
+      'templates',
+      'vision',
+      'userdocs',
     ]],
     'type-enum': [2, 'always', [
       'feat',
       'fix',
       'docs',
-      'style',
-      'refactor',
+      'comp',
       'perf',
+      'pipe',
+      'sec',
       'test',
-      'build',
-      'ci',
-      'chore',
-      'revert',
-      'security'
     ]]
   }
 };
 ```
 
-## Implementation Notes
+**Release Process**
 
-### Release Process
-
-1. __Version Update__
+1. **Version Update**
    - PR merged to main
    - Conventional commit check
    - Changeset creation
    - Version bump
 
-2. __Release Criteria__
+2. **Release Criteria**
    - Security advisory severity
    - Commit type analysis
    - Weekly schedule check
    - Version threshold
 
-3. __Release Actions__
+3. **Release Actions**
    - Build verification
    - Asset generation
    - Signature creation
    - Distribution upload
 
-4. __Post Release__
+4. **Post Release**
    - Changelog update
    - Documentation sync
    - Version notification
    - Monitoring period
 
-## Related Decisions
+### Related Decisions
 
-- [ADR 0010: Code Signing](adr-0010-code-signing.md)
-- [ADR 0016: Security Architecture](adr-0016-security-architecture.md)
-- [ADR 0017: Performance Requirements](adr-0017-performance-requirements.md)
-
-## Other options considered
-
-### Manual Release Process
-
-#### Pros
-
-- Direct control
-- Flexible timing
-- Simple workflow
-- Visual verification
-- Easy rollback
-
-#### Cons
-
-- Human error risk
-- Time consuming
-- Inconsistent
-- Poor automation
-- Version conflicts
-
-### Release Trains
-
-#### Pros
-
-- Predictable schedule
-- Feature batching
-- Team alignment
-- Clear deadlines
-- Version planning
-
-#### Cons
-
-- Release delay
-- Feature holdback
-- Schedule pressure
-- Complex branching
-- Integration challenges
-
-### Continuous Deployment
-
-#### Pros
-
-- Fast delivery
-- Quick feedback
-- Simple process
-- Always releasable
-- Automated testing
-
-#### Cons
-
-- Quality risk
-- Version chaos
-- User fatigue
-- Resource intensive
-- Stability concerns
+* [**ADR-0010** Code Signing](adr-0010-code-signing.md)
+* [**ADR-0016** Security Architecture](adr-0016-security-architecture.md)
+* [**ADR-0017** Performance Requirements](adr-0017-performance-requirements.md)

@@ -1,57 +1,143 @@
-# Documentation Style and Linting
+# **ADR-0012** Documentation Style and Linting
 
-## Status
+**Author**: @pfouilloux
 
-- Status: Accepted
-- Date: 20 December 2024
-- Driver: @pfouilloux
+![Accepted](https://img.shields.io/badge/status-accepted-success) ![20 December 2024](https://img.shields.io/badge/Date-20_Dec_2024-lightblue)
 
-## Context and problem statement
+## Context and Problem Statement
 
 We need to establish a consistent documentation style that is clear, inclusive, and maintainable.
 The style must be accessible to non-native English speakers and support efficient translation workflows.
 
-### Requirements
+## Decision Drivers
 
-#### Must Have
+* Clear guidelines for non-native English speakers
+* Translation-friendly structure
+* Inclusive language standards
+* CI/CD linting integration
+* Contributor-friendly rules
+* IDE integration
+* Automated fixes where possible
+* Style consistency checks
+* Readability metrics
+* Translation memory support
 
-- Clear guidelines for non-native English speakers
-- Translation-friendly structure
-- Inclusive language standards
-- CI/CD linting integration
-- Contributor-friendly rules
+## Considered Options
 
-#### Nice to Have
+* RedHat Style Guide + Vale CLI
+* Google Developer Documentation Style Guide
+* Microsoft Style Guide
+* Grammarly
+* textlint
 
-- IDE integration
-- Automated fixes where possible
-- Style consistency checks
-- Readability metrics
-- Translation memory support
+## Decision Outcome
 
-## Decision outcomes
+Chosen option: "RedHat Style Guide + Vale CLI", because this combination provides clear, translation-optimized guidelines with flexible, automated enforcement.
 
-### Chosen Option: RedHat Style Guide + Vale CLI
+### Consequences
 
-We will use the RedHat Documentation Style Guide with Vale CLI for enforcement.
+* Good, because the RedHat Style Guide provides clear, concise guidelines
+* Good, because it has a translation-optimized approach
+* Good, because it focuses on technical documentation
+* Good, because it is actively maintained
+* Good, because it has wide industry adoption
+* Good, because Vale CLI offers flexible rule configuration
+* Good, because it supports multiple styles
+* Good, because it has good CI/CD integration
+* Good, because it is actively developed
+* Good, because it has a strong community
 
-#### Benefits
+### Confirmation
 
-##### RedHat Style Guide
+Implementation will be confirmed through:
+* Successful integration of Vale CLI in the CI/CD pipeline
+* Verification of documentation against the RedHat style guidelines
+* Contributor feedback on usability
+* Translation efficiency metrics
+* Reduction in style inconsistencies over time
 
-- Clear, concise guidelines
-- Translation-optimized approach
-- Technical documentation focus
-- Active maintenance
-- Wide industry adoption
+## Pros and Cons of the Options
 
-##### Vale CLI
+### RedHat Style Guide + Vale CLI
 
-- Flexible rule configuration
-- Multiple style support
-- Good CI/CD integration
-- Active development
-- Strong community
+This approach combines the RedHat Documentation Style Guide with Vale CLI for automated enforcement.
+
+* Good, because the RedHat Style Guide provides clear, concise guidelines
+* Good, because it has a translation-optimized approach
+* Good, because it focuses on technical documentation
+* Good, because it is actively maintained
+* Good, because it has wide industry adoption
+* Good, because Vale CLI offers flexible rule configuration
+* Good, because it supports multiple styles
+* Good, because it has good CI/CD integration
+* Good, because it is actively developed
+* Good, because it has a strong community
+* Bad, because it has a learning curve for contributors
+* Bad, because it may produce false positives in linting
+* Bad, because it adds translation complexity
+* Bad, because it creates maintenance overhead
+
+### Google Developer Documentation Style Guide
+
+A comprehensive style guide for technical documentation developed by Google.
+
+* Good, because it has comprehensive coverage
+* Good, because it is well-maintained
+* Good, because it is an industry standard
+* Good, because it provides clear examples
+* Good, because it is suitable for technical content
+* Bad, because it is complex for new contributors
+* Bad, because it has less translation focus
+* Bad, because some rules are too strict
+* Bad, because it has Google-specific conventions
+* Bad, because it has limited Vale integration
+
+### Microsoft Style Guide
+
+A style guide focused on clarity and accessibility for technical content.
+
+* Good, because it has an accessibility focus
+* Good, because it is translation friendly
+* Good, because it receives regular updates
+* Good, because it has a clear structure
+* Good, because it provides good examples
+* Bad, because it contains Microsoft-specific terms
+* Bad, because it has complex voice rules
+* Bad, because it has some dated conventions
+* Bad, because it has limited Vale rules
+* Bad, because it overlaps with other tools
+
+### Grammarly
+
+A commercial writing assistant with AI-powered suggestions.
+
+* Good, because it is easy to use
+* Good, because it provides real-time feedback
+* Good, because it has good UI/UX
+* Good, because it offers AI-powered suggestions
+* Good, because it supports multiple style options
+* Bad, because it is closed source
+* Bad, because it has a subscription cost
+* Bad, because it raises privacy concerns
+* Bad, because it has limited CI/CD integration
+* Bad, because it lacks custom rules
+
+### textlint
+
+An open-source linting tool for text and markdown.
+
+* Good, because it is extensible
+* Good, because it has a good plugin ecosystem
+* Good, because it is open source
+* Good, because it supports multiple languages
+* Good, because it allows custom rule support
+* Bad, because it has a complex setup
+* Bad, because it is less maintained
+* Bad, because it has limited IDE support
+* Bad, because it has performance issues
+* Bad, because it is redundant with Vale
+
+## More Information
 
 ### Implementation Details
 
@@ -110,104 +196,6 @@ documentation:
 - Translation memory setup
 - Review process definition
 
-### Risks and Mitigations
-
-#### Risks
-
-- Learning curve for contributors
-- False positives in linting
-- Translation complexity
-- Maintenance overhead
-
-#### Mitigations
-
-- Comprehensive onboarding docs
-- Regular rule refinement
-- Translation tooling automation
-- Clear update process
-
-## Related Decisions
-
-- [D0002: Linting and Formatting Tools](adr-0002-linting-and-formatting-tools.md)
-- [D0008: Package Management and Documentation](adr-0008-package-management-and-documentation.md)
-- [D0009: Workspace Management](adr-0009-workspace-management.md)
-
-## Other options considered
-
-### [Google Developer Documentation Style Guide](https://developers.google.com/style)
-
-#### Pros
-
-- Comprehensive coverage
-- Well-maintained
-- Industry standard
-- Clear examples
-- Good for technical content
-
-#### Cons
-
-- Complex for new contributors
-- Less translation focus
-- Some rules too strict
-- Google-specific conventions
-- Limited Vale integration
-
-### [Microsoft Style Guide](https://learn.microsoft.com/style-guide/welcome/)
-
-#### Pros
-
-- Accessibility focus
-- Translation friendly
-- Regular updates
-- Clear structure
-- Good examples
-
-#### Cons
-
-- Microsoft-specific terms
-- Complex voice rules
-- Some dated conventions
-- Limited Vale rules
-- Overlap with other tools
-
-### [Grammarly](https://www.grammarly.com/)
-
-#### Pros
-
-- Easy to use
-- Real-time feedback
-- Good UI/UX
-- AI-powered suggestions
-- Multiple style options
-
-#### Cons
-
-- Closed source
-- Subscription cost
-- Privacy concerns
-- Limited CI/CD integration
-- No custom rules
-
-### [textlint](https://textlint.github.io/)
-
-#### Pros
-
-- Extensible
-- Good plugin ecosystem
-- Open source
-- Multiple language support
-- Custom rule support
-
-#### Cons
-
-- Complex setup
-- Less maintained
-- Limited IDE support
-- Performance issues
-- Redundant with Vale
-
-## Implementation Notes
-
 ### Style Priorities
 
 1. **Clarity First**
@@ -251,3 +239,25 @@ documentation:
    - Integration setup
    - Performance tips
    - Troubleshooting
+
+### Risks and Mitigations
+
+#### Risks
+
+- Learning curve for contributors
+- False positives in linting
+- Translation complexity
+- Maintenance overhead
+
+#### Mitigations
+
+- Comprehensive onboarding docs
+- Regular rule refinement
+- Translation tooling automation
+- Clear update process
+
+### Related Decisions
+
+- [ADR-0002: Linting and Formatting Tools](adr-0002-linting-and-formatting-tools.md)
+- [ADR-0008: Package Management and Documentation](adr-0008-package-management-and-documentation.md)
+- [ADR-0009: Workspace Management](adr-0009-workspace-management.md)

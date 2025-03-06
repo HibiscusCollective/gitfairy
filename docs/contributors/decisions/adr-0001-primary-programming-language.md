@@ -1,10 +1,10 @@
-# **ADR0001** Primary Programming Language
+# **ADR-0001** Primary Programming Language
 
-**Authors**: @pfouilloux
+**Author**: @pfouilloux
 
 ![Accepted](https://img.shields.io/badge/status-accepted-success) ![Date](https://img.shields.io/badge/Date-20_Dec_2024-lightblue)
 
-## Context and problem statement
+## Context and Problem Statement
 
 We need to establish a primary programming language that satisfies functional and non-functional requirements.
 The main pillars are:
@@ -15,38 +15,32 @@ The main pillars are:
 
 ## Decision Drivers
 
-### Must Have
-
 * Multithreading/Async support: We want to let users queue up commands without noticeable lag between interactions, so things need to be able to run in the background.
 * OS Integration: The interface should feel as native to the OS as possible. Leveraging things like context menu actions, popups, icons, etc. This should not feel like a separate app.
-* Secure authentication: We want to make sure that the user can securely authenticate to the services they want to access. We don't want a permanent token saved in plaintext in a config file.
-   We want to leverage modern security methods, like OAuth, keychains, etc.
+* Secure authentication: We want to make sure that the user can securely authenticate to the services they want to access. We don't want a permanent token saved in plaintext in a config file. We want to leverage modern security methods, like OAuth, keychains, etc.
 * Git Integration: We need full featured git integration with support for extensions. Capabilities should be as close to CLI as possible.
-
-### Nice to Have
-
-* Cross-platform support
-* Rich ecosystem of libraries
-* Strong type system
-* Memory safety guarantees
+* Cross-platform support (nice to have)
+* Rich ecosystem of libraries (nice to have)
+* Strong type system (nice to have)
+* Memory safety guarantees (nice to have)
 
 ## Considered Options
 
 * Rust with [tauri](https://tauri.app/), [tokio](https://tokio.rs/), [git2](https://github.com/libgit2/libgit2) and [config](https://github.com/rust-cli/config-rs)
 * Go with [wails](https://wails.app/) and [viper](https://github.com/spf13/viper)
 * Python
-* Nodejs
+* NodeJS
 
-## Decision outcomes
+## Decision Outcome
 
-Chosen Option: **Rust with [tauri](https://tauri.app/), [tokio](https://tokio.rs/) , [git2](https://github.com/libgit2/libgit2) and [config](https://github.com/rust-cli/config-rs)**
+Chosen option: **Rust with [tauri](https://tauri.app/), [tokio](https://tokio.rs/), [git2](https://github.com/libgit2/libgit2) and [config](https://github.com/rust-cli/config-rs)**, because it best meets our performance, security, and UX requirements.
 
 * [tauri](https://tauri.app/) will drive our UI components, popups, modals, configuration, etc.
 * [tokio](https://tokio.rs/) will drive our async capabilities.
 * [git2](https://docs.rs/git2/latest/git2/) will interact with VCS, this handles auth and all the git operations we'll need.
 * [config](https://github.com/rust-cli/config-rs) will read and write configuration files. This gives us the flexibility to read and write different formats and layer them in various ways.
 
-## Consequences
+### Consequences
 
 * Good, because rust provides zero-cost abstractions and minimal runtime overhead ensure optimal performance
 * Good, because rust guarantees memory safety without garbage collection
@@ -63,7 +57,22 @@ Chosen Option: **Rust with [tauri](https://tauri.app/), [tokio](https://tokio.rs
 
 ## Pros and Cons of the Options
 
-### Go
+### Rust with tauri, tokio, git2 and config
+
+* Good, because rust provides zero-cost abstractions and minimal runtime overhead ensure optimal performance
+* Good, because rust guarantees memory safety without garbage collection
+* Good, because rust's rich type system and ownership model prevent common bugs at compile time
+* Good, because tokio provides excellent concurrency support through async/await and the ownership system
+* Good, because of rust's strong ecosystem for system programming and native OS integration
+* Good, because rust + cargo have full cross-platform compilation support
+* Good, because of the active and growing community with high-quality libraries
+* Bad, because rust has a steep learning curve, especially for developers new to systems programming
+* Bad, because rust's powerful type system can lead to longer compilation times
+* Bad, because finding experienced Rust developers might be challenging
+* Bad, because some libraries might not be as mature as their counterparts in other ecosystems
+* Bad, because native OS integration might require platform-specific code paths
+
+### Go with wails and viper
 
 Go was considered as a potential alternative due to its simplicity and strong concurrency model.
 
@@ -107,10 +116,10 @@ NodeJS was considered for its strong GUI framework support and JavaScript ecosys
 * Bad, because nodejs has limited system-level programming capabilities
 * Bad, because it has high memory overhead
 
-## More information
+## More Information
 
-* [**ADR0002** Linting and Formatting Tools](adr-0002-linting-and-formatting-tools.md)
-* [**ADR0004** Release Management](adr-0004-release-management.md)
-* [**ADR0008** Package Management and Documentation](adr-0008-package-management-and-documentation.md)
-* [**ADR0009** Workspace Management](adr-0009-workspace-management.md)
-* [**ADR0011** Installers](adr-0011-installers.md)
+* [**ADR-0002** Linting and Formatting Tools](adr-0002-linting-and-formatting-tools.md)
+* [**ADR-0004** Release Management](adr-0004-release-management.md)
+* [**ADR-0008** Package Management and Documentation](adr-0008-package-management-and-documentation.md)
+* [**ADR-0009** Workspace Management](adr-0009-workspace-management.md)
+* [**ADR-0011** Installers](adr-0011-installers.md)

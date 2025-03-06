@@ -1,60 +1,130 @@
-# D0009 - Error Handling and Logging
+# **ADR-0014** Error Handling and Logging
 
-## Status
+**Author**: @pfouilloux
 
-- Status: Proposed
-- Date: 20 December 2024
-- Driver: @pfouilloux
+![Proposed](https://img.shields.io/badge/status-proposed-yellow) ![20 December 2024](https://img.shields.io/badge/Date-20_Dec_2024-lightblue)
 
-## Context and problem statement
+## Context and Problem Statement
 
 We need a robust error handling and logging strategy that prioritizes user experience while maintaining comprehensive debugging capabilities.
 The solution must be efficient, structured, and provide meaningful feedback without overwhelming users or system resources.
 
-### Requirements
+## Decision Drivers
 
-#### Must Have
+* Graceful error recovery
+* Structured logging
+* Clear user messaging
+* Performance efficiency
+* Cross-platform support
+* Automated log submission
+* Opt-in monitoring
+* User feedback system
+* Log rotation
+* Crash reporting
 
-- Graceful error recovery
-- Structured logging
-- Clear user messaging
-- Performance efficiency
-- Cross-platform support
+## Considered Options
 
-#### Nice to Have
+* thiserror + anyhow + SecureFmt for error handling and tracing + serde_json for logging
+* panic + catch_unwind
+* log + env_logger
+* Custom Error Types
 
-- Automated log submission
-- Opt-in monitoring
-- User feedback system
-- Log rotation
-- Crash reporting
+## Decision Outcome
 
-## Decision outcomes
+Chosen option: "thiserror + anyhow + SecureFmt for error handling and tracing + serde_json for logging", because this combination provides comprehensive error management with privacy-respecting logging capabilities.
 
-### Error Handling Strategy
+### Consequences
 
-#### Core Principles
+* Good, because it enables type-safe error handling
+* Good, because it preserves error context for debugging
+* Good, because it utilizes zero-cost abstractions
+* Good, because it has good IDE support
+* Good, because it leverages an extensive ecosystem
+* Good, because it provides structured logging output
+* Good, because it supports async operations
+* Good, because it offers sampling capabilities
+* Good, because it enables context propagation
+* Good, because it has an extensible design
+* Bad, because it introduces additional dependencies
+* Bad, because it requires learning multiple libraries
+* Bad, because it may increase binary size
+* Bad, because it has a steeper learning curve for new contributors
 
-- Errors should be recoverable whenever possible
-- Users should only see actionable messages
-- Internal errors should be logged but handled gracefully
-- Error context should be preserved for debugging
-- Error handling should be consistent across the application
+### Confirmation
 
-#### Implementation: thiserror + anyhow + SecureFmt
+Implementation will be confirmed through:
+* Successful integration of error handling and logging across the application
+* Verification of error recovery mechanisms
+* User feedback on error messages
+* Performance metrics for logging overhead
+* Privacy audit of logged information
 
-__Rationale__: `thiserror` provides ergonomic error definitions while `anyhow` offers flexible error handling. Together they provide a complete error management solution.
-`SecureFmt` ensures privacy-respecting logging by letting us flag sensitive fields when defining types.
+## Pros and Cons of the Options
 
-##### Benefits
+### thiserror + anyhow + SecureFmt for error handling and tracing + serde_json for logging
 
-- Type-safe error handling
-- Error context preservation
-- Zero-cost abstractions
-- Good IDE support
-- Extensive ecosystem
+#### Error Handling: thiserror + anyhow + SecureFmt
 
-##### Implementation
+* Good, because it enables type-safe error handling
+* Good, because it preserves error context for debugging
+* Good, because it utilizes zero-cost abstractions
+* Good, because it has good IDE support
+* Good, because it leverages an extensive ecosystem
+* Bad, because it introduces additional dependencies
+* Bad, because it requires learning multiple libraries
+
+#### Logging: tracing + serde_json
+
+* Good, because it provides structured logging output
+* Good, because it supports async operations
+* Good, because it offers sampling capabilities
+* Good, because it enables context propagation
+* Good, because it has an extensible design
+* Bad, because it may increase binary size
+* Bad, because it has a steeper learning curve
+
+### panic + catch_unwind
+
+* Good, because it has a simple implementation
+* Good, because it is built into Rust
+* Good, because it requires zero dependencies
+* Good, because it has good performance
+* Good, because it provides stack traces
+* Bad, because it lacks error context
+* Bad, because it offers binary choice (panic or not)
+* Bad, because it creates poor user experience
+* Bad, because it has limited recovery options
+* Bad, because it is difficult to test
+
+### log + env_logger
+
+* Good, because it is a standard library
+* Good, because it has simple setup
+* Good, because it provides a familiar interface
+* Good, because it has good documentation
+* Good, because it has wide adoption
+* Bad, because it produces unstructured logging
+* Bad, because it lacks context propagation
+* Bad, because it has limited features
+* Bad, because it introduces performance overhead
+* Bad, because it lacks async support
+
+### Custom Error Types
+
+* Good, because it provides full control
+* Good, because it is domain-specific
+* Good, because it requires no dependencies
+* Good, because it can be optimized for use case
+* Good, because it has clear ownership
+* Bad, because it creates implementation overhead
+* Bad, because it adds maintenance burden
+* Bad, because it may lead to inconsistent handling
+* Bad, because it lacks ecosystem tools
+* Bad, because it has a learning curve
+
+## More Information
+
+### Error Handling Implementation
 
 ```rust
 use thiserror::Error;
@@ -75,7 +145,25 @@ pub enum GitFairyError {
 }
 ```
 
-#### Recovery Strategies
+### Core Principles
+
+#### Error Handling Principles
+
+- Errors should be recoverable whenever possible
+- Users should only see actionable messages
+- Internal errors should be logged but handled gracefully
+- Error context should be preserved for debugging
+- Error handling should be consistent across the application
+
+#### Logging Principles
+
+- Structured logging by default
+- No redundant log levels
+- Performance-first approach
+- Privacy-respecting
+- Storage-efficient
+
+### Recovery Strategies
 
 1. __Automatic Retry__
    - Network operations
@@ -95,29 +183,7 @@ pub enum GitFairyError {
    - Manual retry option
    - Support links
 
-### Logging Strategy
-
-#### Core Principles
-
-- Structured logging by default
-- No redundant log levels
-- Performance-first approach
-- Privacy-respecting
-- Storage-efficient
-
-#### Implementation: tracing + serde_json
-
-__Rationale__: `tracing` provides async-aware instrumentation with structured logging capabilities, while `serde_json` ensures efficient serialization.
-
-##### Benefits
-
-- Structured output
-- Async support
-- Sampling capabilities
-- Context propagation
-- Extensible design
-
-##### Implementation
+### Logging Implementation
 
 ```rust
 use tracing::{info, instrument};
@@ -134,7 +200,7 @@ pub fn workspace_operation(path: &str, config: &Value) {
 }
 ```
 
-#### Log Structure
+### Log Structure
 
 ```json
 {
@@ -186,8 +252,6 @@ pub fn workspace_operation(path: &str, config: &Value) {
 - Community discord
 - Email support
 
-## Implementation Notes
-
 ### Error Categories
 
 1. __User Errors__
@@ -214,63 +278,7 @@ pub fn workspace_operation(path: &str, config: &Value) {
    - Cache invalidation
    - Safe mode activation
 
-## Related Decisions
+### Related Decisions
 
-- [D0001: Language](adr-0001-primary-programming-language.md)
-- [D0013: Testing Strategy](adr-0013-testing-strategy.md)
-
-## Other options considered
-
-### panic + catch_unwind
-
-#### Pros
-
-- Simple implementation
-- Built into Rust
-- Zero dependencies
-- Good performance
-- Stack traces
-
-#### Cons
-
-- No error context
-- Binary choice (panic or not)
-- Poor user experience
-- Limited recovery options
-- Difficult to test
-
-### log + env_logger
-
-#### Pros
-
-- Standard library
-- Simple setup
-- Familiar interface
-- Good documentation
-- Wide adoption
-
-#### Cons
-
-- Unstructured logging
-- No context propagation
-- Limited features
-- Performance overhead
-- No async support
-
-### Custom Error Types
-
-#### Pros
-
-- Full control
-- Domain-specific
-- No dependencies
-- Optimized for use case
-- Clear ownership
-
-#### Cons
-
-- Implementation overhead
-- Maintenance burden
-- Inconsistent handling
-- Missing ecosystem tools
-- Learning curve
+- [ADR-0001: Primary Programming Language](adr-0001-primary-programming-language.md)
+- [ADR-0013: Testing Strategy](adr-0013-testing-strategy.md)

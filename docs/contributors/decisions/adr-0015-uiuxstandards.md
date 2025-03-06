@@ -1,51 +1,84 @@
-# D0010 - UI/UX Standards
+# **ADR-0015** UI/UX Standards
 
-## Status
+**Author**: @pfouilloux  
+![Proposed](https://img.shields.io/badge/status-proposed-yellow) ![20 December 2024](https://img.shields.io/badge/Date-20_Dec_2024-lightblue)
 
-- Status: Proposed
-- Date: 20 December 2024
-- Driver: @pfouilloux
+## Context and Problem Statement
 
-## Context and problem statement
+We need to establish UI/UX standards that provide a native feel across platforms while maintaining consistency and accessibility. The solution must support internationalization, accessibility compliance, and be testable through automated tools.
 
-We need to establish UI/UX standards that provide a native feel across platforms while maintaining consistency and accessibility.
-The solution must support internationalization and be testable through automated tools.
+## Decision Drivers
 
-### Requirements
+* Native platform look and feel
+* Accessibility compliance
+* Internationalization support
+* Component consistency
+* Automated testing
 
-#### Must Have
+## Considered Options
 
-- Native platform look and feel
-- Accessibility compliance
-- Internationalization support
-- Component consistency
-- Automated testing
+* Tauri + Leptos for UI framework and native integration
+* React Native for cross-platform mobile integration
+* Custom WebView for lightweight web technologies
+* Qt for mature cross-platform desktop solutions
 
-#### Nice to Have
+## Decision Outcome
 
-- Design system
-- AI-assisted translations
-- RTL support
-- Theme customization
-- Performance metrics
+Chosen option: "Tauri + Leptos for UI framework and native integration", because it provides native OS integration with a modern reactive framework, ensuring performance, type safety, and a small bundle size.
 
-## Decision outcomes
+### Consequences
+
+* Good, because it enables native platform integration with a consistent look and feel.
+* Good, because it leverages the Rust ecosystem for type-safe and high-performance components.
+* Bad, because it introduces additional dependencies and requires learning new frameworks.
+* Bad, because it may limit design flexibility compared to more mature frameworks.
+
+### Confirmation
+
+Implementation will be confirmed through:
+* Successful integration of UI components with Tauri and Leptos.
+* Automated testing of accessibility and responsiveness.
+* User feedback on the native look and feel.
+* Performance benchmarks on different platforms.
+
+## Pros and Cons of the Options
+
+### Tauri + Leptos
+
+* Good, because it provides native OS integration.
+* Good, because it minimizes bundle size and ensures performance.
+* Neutral, because it requires some adjustment from traditional web frameworks.
+* Bad, because it introduces new dependencies.
+
+### React Native
+
+* Good, because of its large ecosystem.
+* Good, because it supports cross-platform mobile development.
+* Bad, because of potential JavaScript overhead and bundle size concerns.
+* Bad, because it may not offer native desktop integration.
+
+### Custom WebView
+
+* Good, because it offers full control over the UI.
+* Bad, because it might feel non-native.
+* Bad, because of potential performance overhead.
+* Bad, because it lacks deep OS integration.
+
+### Qt
+
+* Good, because it offers mature tooling and native widgets.
+* Bad, because of licensing costs and a larger runtime.
+* Bad, because of complex bindings with Rust.
+
+## More Information
 
 ### UI Framework Strategy
 
 #### Core Framework: Tauri + Leptos
 
-__Rationale__: Tauri provides native OS integration while Leptos offers a modern reactive framework with SSR capabilities.
+__Rationale__: Tauri provides native OS integration while Leptos offers a modern reactive framework with server-side rendering capabilities.
 
-##### Benefits
-
-- Native OS integration
-- Small bundle size
-- Type-safe components
-- Good performance
-- Rust ecosystem
-
-##### Implementation
+##### Code Example
 
 ```rust
 use leptos::*;
@@ -71,47 +104,30 @@ fn NativeButton(
 
 #### Platform-Native Components
 
-__Rationale__: Using `tauri-specta` for native components with consistent API surface.
+__Rationale__: Leveraging platform-specific design guidelines ensures consistency with each operating system.
 
-##### Implementation
+##### Implementation Details
 
 - Windows: Fluent Design System
 - macOS: SF Symbols and HIG
-- Linux: Follow current desktop theme
-- Fallback to custom components
-
-#### Component Library: Leptonic
-
-__Rationale__: Leptonic provides accessible, customizable components that can adapt to native styles.
-
-##### Benefits
-
-- Accessibility built-in
-- Theme support
-- Responsive design
-- Type safety
-- Small bundle size
+- Linux: Adherence to current desktop themes, with fallback to custom components
 
 ### Accessibility Standards
 
 #### Implementation: Platform APIs + Leptonic
 
-__Rationale__: Leptonic provides built-in accessibility features, while direct platform API integration ensures native accessibility support.
+__Rationale__: Combining built-in accessibility features from Leptonic with direct OS API calls ensures comprehensive coverage.
 
-##### Standards Compliance
-
-- WCAG 2.1 Level AA
-- WAI-ARIA 1.2
-- EN 301 549
-- Section 508
-
-##### Platform Integration
+##### Code Example
 
 ```rust
 use tauri::api::system;
-use windows::UI::Accessibility;  // For Windows
-use cocoa::appkit::NSAccessibility;  // For macOS
-use atspi::Accessible;  // For Linux
+#[cfg(target_os = "windows")]
+use windows::UI::Accessibility;
+#[cfg(target_os = "macos")]
+use cocoa::appkit::NSAccessibility;
+#[cfg(target_os = "linux")]
+use atspi::Accessible;
 
 #[derive(Debug)]
 pub enum PlatformAccessibility {
@@ -134,110 +150,26 @@ impl PlatformAccessibility {
 }
 ```
 
-##### Testing Strategy
-
-```yaml
-accessibility:
-  framework:
-    leptonic:
-      components: "Built-in ARIA support"
-      keyboard: "Focus management"
-      themes: "High contrast modes"
-    
-  platform_testing:
-    windows:
-      - Windows Accessibility Insights
-      - Narrator
-    macos:
-      - VoiceOver
-      - Accessibility Inspector
-    linux:
-      - Orca
-      - AT-SPI Test Tools
-    
-  automated_checks:
-    - markup_validation:
-        - ARIA roles
-        - Label presence
-        - Focus order
-    - visual_validation:
-        - Color contrast
-        - Text sizing
-        - Touch targets
-    - keyboard_testing:
-        - Navigation
-        - Shortcuts
-        - Focus traps
-```
-
-##### Integration Strategy
-
-1. __Component Level__
-   - Leverage Leptonic's built-in accessibility
-   - Implement ARIA attributes
-   - Keyboard navigation
-   - Focus management
-
-2. __Platform Level__
-   - Direct OS accessibility API calls
-   - Screen reader integration
-   - System preferences respect
-   - High contrast support
-
-3. __Testing Pipeline__
-   - Automated markup validation
-   - Platform-specific tools
-   - Manual testing checklist
-   - Regular compliance audits
-
-4. __Continuous Monitoring__
-   - User feedback collection
-   - Screen reader compatibility
-   - Keyboard navigation paths
-   - Focus management issues
-
 ### Internationalization
 
 #### Implementation: ICU4X + Fluent
 
-__Rationale__: ICU4X provides comprehensive i18n support in Rust, while Fluent offers a modern localization system.
+__Rationale__: ICU4X supports comprehensive internationalization while Fluent provides a modern localization framework.
 
-##### Benefits
+##### Code Example
 
-- Native Rust implementation
-- Full ICU support
-- Pluralization rules
-- Number formatting
-- Date/time handling
+```rust
+use icu_locid::LanguageIdentifier;
+use fluent::{FluentBundle, FluentResource};
 
-##### Translation Workflow
-
-1. __String Extraction__
-   - Static analysis
-   - Template parsing
-   - Comment extraction
-   - Context preservation
-
-2. __AI Translation Pipeline__
-
-   ```rust
-   use icu_locid::LanguageIdentifier;
-   use fluent::{FluentBundle, FluentResource};
-
-   #[derive(Debug)]
-   pub struct TranslationPipeline {
-       source_locale: LanguageIdentifier,
-       target_locales: Vec<LanguageIdentifier>,
-       ai_service: Box<dyn TranslationService>,
-       human_review: Option<Box<dyn ReviewService>>,
-   }
-   ```
-
-3. __Quality Assurance__
-   - Automated validation
-   - Context verification
-   - Format string checking
-   - Human review workflow
+#[derive(Debug)]
+pub struct TranslationPipeline {
+    source_locale: LanguageIdentifier,
+    target_locales: Vec<LanguageIdentifier>,
+    ai_service: Box<dyn TranslationService>,
+    human_review: Option<Box<dyn ReviewService>>,
+}
+```
 
 ### Theme System
 
@@ -245,11 +177,8 @@ __Rationale__: ICU4X provides comprehensive i18n support in Rust, while Fluent o
 
 ```css
 .native-button {
-    /* Platform-specific properties */
     --button-radius: var(--platform-button-radius);
     --button-padding: var(--platform-button-padding);
-    
-    /* Consistent properties */
     --button-font: var(--system-font);
     --button-transition: var(--standard-transition);
 }
@@ -257,92 +186,6 @@ __Rationale__: ICU4X provides comprehensive i18n support in Rust, while Fluent o
 
 ## Related Decisions
 
-- [D0001: Language](adr-0001-primary-programming-language.md)
-- [D0002: Toolkit](adr-0002-linting-and-formatting-tools.md)
-- [D0009: Error Handling](adr-0014-error-handling-and-logging.md)
-
-## Implementation Notes
-
-### Component Categories
-
-1. __Core Components__
-   - Buttons
-   - Input fields
-   - Dialogs
-   - Menus
-   - Lists
-
-2. __Platform Components__
-   - Context menus
-   - System tray
-   - Notifications
-   - File pickers
-
-3. __Custom Components__
-   - Git graph
-   - Diff viewer
-   - Branch manager
-   - Commit composer
-
-4. __Accessibility Features__
-   - Keyboard navigation
-   - Screen reader support
-   - High contrast mode
-   - Focus indicators
-   - ARIA labels
-
-## Other options considered
-
-### React Native
-
-#### Pros
-
-- Cross-platform
-- Large ecosystem
-- Good documentation
-- Active community
-- Native bridges
-
-#### Cons
-
-- JavaScript overhead
-- Bundle size
-- Performance cost
-- Complex tooling
-- Limited OS integration
-
-### Custom WebView
-
-#### Pros
-
-- Full control
-- Simple architecture
-- Web technologies
-- Easy deployment
-- Fast development
-
-#### Cons
-
-- Non-native feel
-- Performance overhead
-- Limited OS features
-- Security concerns
-- Maintenance burden
-
-### Qt
-
-#### Pros
-
-- Native widgets
-- Cross-platform
-- Mature framework
-- Good tools
-- C++ performance
-
-#### Cons
-
-- Licensing costs
-- Complex bindings
-- Large runtime
-- Learning curve
-- Limited web tech
+* [ADR-0001: Primary Programming Language](adr-0001-primary-programming-language.md)
+* [ADR-0002: Toolkit](adr-0002-linting-and-formatting-tools.md)
+* [ADR-0014: Error Handling and Logging](adr-0014-error-handling-and-logging.md)

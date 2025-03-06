@@ -1,46 +1,104 @@
-# D0011 - Security Architecture
+# **ADR-0016** Security Architecture
 
-## Status
+**Author**: @pfouilloux
 
-- Status: Accepted
-- Date: 20 December 2024
-- Driver: @pfouilloux
+![Accepted](https://img.shields.io/badge/status-accepted-green) ![20 December 2024](https://img.shields.io/badge/Date-20_Dec_2024-lightblue)
 
-## Context and problem statement
+## Context and Problem Statement
 
 We need a robust security architecture that protects user credentials and sensitive information on their local device.
 The solution must integrate with platform security features and follow modern security practices.
 
-### Requirements
+## Decision Drivers
 
-#### Must Have
+* Secure credential storage
+* OAuth/SSH support
+* Automatic updates
+* Dependency management
+* Security policy
+* Security auditing
+* Vulnerability scanning
+* Threat modeling
+* Bug bounty program
+* Security notifications
 
-- Secure credential storage
-- OAuth/SSH support
-- Automatic updates
-- Dependency management
-- Security policy
+## Considered Options
 
-#### Nice to Have
+* OAuth + SSH + Platform Keychain + Automatic Updates
+* Web-based Authentication
+* Custom Credential Storage
+* Manual Updates
 
-- Security auditing
-- Vulnerability scanning
-- Threat modeling
-- Bug bounty program
-- Security notifications
+## Decision Outcome
 
-## Decision outcomes
+Chosen option: "OAuth + SSH + Platform Keychain + Automatic Updates", because it provides a comprehensive security architecture that leverages platform-specific features while maintaining cross-platform compatibility.
 
-### Authentication Strategy
+### Consequences
+
+* Good, because it securely manages user credentials using platform-native solutions
+* Good, because it supports multiple authentication methods (OAuth and SSH)
+* Good, because it ensures timely security updates through automatic update mechanisms
+* Good, because it maintains dependency security through automated scanning
+* Bad, because it increases implementation complexity with multiple authentication methods
+* Bad, because it requires management of OAuth client secrets
+
+### Confirmation
+
+Implementation will be confirmed through:
+* Security audit of credential storage implementation
+* Successful OAuth authentication flows with major Git providers
+* Verification of SSH key management
+* Testing of the automatic update process with signed packages
+* Regular dependency vulnerability scanning
+
+## Pros and Cons of the Options
+
+### OAuth + SSH + Platform Keychain + Automatic Updates
+
+* Good, because it leverages standardized authentication protocols
+* Good, because it supports both web-based and key-based authentication
+* Good, because it uses platform-native security features
+* Good, because it ensures timely security updates
+* Bad, because it requires management of OAuth client secrets
+* Bad, because it increases implementation complexity
+
+### Web-based Authentication
+
+* Good, because it provides a familiar authentication flow
+* Good, because it's easy to implement across platforms
+* Good, because it follows standard protocols
+* Bad, because it requires a server component
+* Bad, because it's network dependent
+* Bad, because it raises privacy concerns
+* Bad, because it adds maintenance and cost overhead
+
+### Custom Credential Storage
+
+* Good, because it offers full control over implementation
+* Good, because it works consistently across platforms
+* Good, because it has minimal dependencies
+* Bad, because it introduces security risks from custom implementations
+* Bad, because it creates a maintenance burden
+* Bad, because it doesn't leverage platform security benefits
+* Bad, because it may reduce user trust
+
+### Manual Updates
+
+* Good, because it gives users control over update timing
+* Good, because it's simple to implement
+* Good, because it works offline
+* Bad, because it delays critical security fixes
+* Bad, because it creates version fragmentation
+* Bad, because it increases support overhead
+
+## More Information
+
+### Authentication Implementation
 
 #### OAuth Integration
 
-__Rationale__: OAuth provides secure, standardized authentication without handling credentials directly.
-
-##### Implementation
-
 ```rust
-use oauth2::{
+use oauth2:{
     basic::BasicClient,
     AuthUrl,
     TokenUrl,
@@ -78,10 +136,6 @@ impl GitProvider {
 
 #### SSH Support
 
-__Rationale__: SSH provides a secure alternative for users who prefer key-based authentication.
-
-##### Implementation
-
 ```rust
 use ssh2::Session;
 use std::path::PathBuf;
@@ -105,12 +159,6 @@ impl SSHConfig {
 
 ### Credential Management
 
-#### Platform Keychain Integration
-
-__Rationale__: Native keychain integration provides secure credential storage with platform-specific encryption.
-
-##### Implementation
-
 ```rust
 use keyring::Entry;
 use serde::{Serialize, Deserialize};
@@ -130,12 +178,6 @@ impl Credential {
 ```
 
 ### Update Management
-
-#### Automatic Updates
-
-__Rationale__: Tauri's built-in updater with code signing ensures secure and reliable updates.
-
-##### Implementation
 
 ```rust
 use tauri::updater::{Update, UpdateResponse};
@@ -160,8 +202,6 @@ impl UpdateConfig {
 ```
 
 ### Dependency Management
-
-#### Renovate Configuration
 
 ```json
 {
@@ -189,100 +229,40 @@ impl UpdateConfig {
 }
 ```
 
-## Implementation Notes
-
 ### Security Measures
 
 1. __Authentication__
-
    - OAuth 2.0 flow
    - SSH key management
    - Platform keychain
    - Session handling
 
 2. __Data Protection__
-
    - Credential encryption
    - Secure storage
    - Memory protection
    - Cache clearing
 
 3. __Update Security__
-
    - Code signing
    - Update verification
    - Rollback support
    - Delta updates
 
 4. __Monitoring__
-
    - Dependency scanning
    - Security advisories
    - Update notifications
    - Error tracking
 
-## Security and Privacy Policies
+### Security and Privacy Policies
 
 - [Security Policy](https://github.com/HibiscusCollective/.github/blob/main/docs/SECURITY.md)
 
-## Related Decisions
+### Related Decisions
 
-- [D0005: Code Signing](adr-0010-code-signing.md)
-- [D0006: Installers](adr-0011-installers.md)
-- [D0009: Error Handling](adr-0014-error-handling-and-logging.md)
+- [ADR-0010: Code Signing](adr-0010-code-signing.md)
+- [ADR-0011: Installers](adr-0011-installers.md)
+- [ADR-0014: Error Handling and Logging](adr-0014-error-handling-and-logging.md)
 
-## Other options considered
 
-### Web-based Authentication
-
-#### Pros
-
-- Familiar flow
-- Easy implementation
-- Cross-platform
-- Standard protocols
-- Easy updates
-
-#### Cons
-
-- Requires server
-- Network dependent
-- Privacy concerns
-- Cost overhead
-- Maintenance burden
-
-### Custom Credential Storage
-
-#### Pros
-
-- Full control
-- Cross-platform
-- No dependencies
-- Simple implementation
-- Consistent behavior
-
-#### Cons
-
-- Security risks
-- Maintenance burden
-- No platform benefits
-- Reinventing wheel
-- User trust issues
-
-### Manual Updates
-
-#### Pros
-
-- User control
-- Simple implementation
-- No infrastructure
-- Offline support
-- Version control
-
-#### Cons
-
-- Security risks
-- User friction
-- Version fragmentation
-- Support overhead
-- Delayed fixes

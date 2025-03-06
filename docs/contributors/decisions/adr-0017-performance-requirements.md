@@ -1,43 +1,106 @@
-# D0012 - Performance Requirements
+# **ADR-0017** Performance Requirements
 
-## Status
+**Author**: @pfouilloux
 
-- Status: Accepted
-- Date: 20 December 2024
-- Driver: @pfouilloux
+![Accepted](https://img.shields.io/badge/status-accepted-green) ![20 December 2024](https://img.shields.io/badge/Date-20_Dec_2024-lightblue)
 
-## Context and problem statement
+## Context and Problem Statement
 
 We need to establish performance requirements that ensure GitFairy remains responsive while respecting upstream API limitations.
 The solution must provide reliable benchmarking without compromising user privacy.
 
-### Requirements
+## Decision Drivers
 
-#### Must Have
+* Performance parity with native git
+* API rate limit compliance
+* Automated benchmarking
+* Resource monitoring
+* Performance testing
+* Opt-in telemetry
+* Performance profiling
+* Resource optimization
+* Caching strategies
+* Load testing
 
-- Performance parity with native git
-- API rate limit compliance
-- Automated benchmarking
-- Resource monitoring
-- Performance testing
+## Considered Options
 
-#### Nice to Have
+* Automated Performance Testing with CI/CD Integration
+* Manual Performance Testing
+* Cloud Performance Testing
+* Real User Monitoring
 
-- Opt-in telemetry
-- Performance profiling
-- Resource optimization
-- Caching strategies
-- Load testing
+## Decision Outcome
 
-## Decision outcomes
+Chosen option: "Automated Performance Testing with CI/CD Integration", because it provides consistent, reproducible performance metrics while maintaining control over testing environments and privacy considerations.
+
+### Consequences
+
+* Good, because it ensures consistent performance measurement across development cycles
+* Good, because it automates detection of performance regressions
+* Good, because it respects user privacy by not requiring production monitoring
+* Good, because it integrates with existing CI/CD pipelines
+* Bad, because it requires additional infrastructure setup and maintenance
+* Bad, because synthetic tests may not fully represent real-world usage patterns
+
+### Confirmation
+
+Implementation will be confirmed through:
+* Successful integration of performance tests in CI/CD pipeline
+* Establishment of performance baselines for key operations
+* Regular performance regression testing
+* Validation that performance targets are consistently met
+
+## Pros and Cons of the Options
+
+### Automated Performance Testing with CI/CD Integration
+
+* Good, because it provides consistent, reproducible results
+* Good, because it integrates with existing development workflows
+* Good, because it enables early detection of performance issues
+* Bad, because it requires additional infrastructure setup
+* Bad, because synthetic tests may not fully represent real-world usage
+
+### Manual Performance Testing
+
+* Good, because it has a simple setup with no automation needed
+* Good, because it provides direct feedback from real-world usage
+* Good, because it offers flexible testing scenarios
+* Bad, because it produces inconsistent, hard-to-reproduce results
+* Bad, because it is time-consuming and resource-intensive
+* Bad, because it supports only limited testing scenarios
+
+### Cloud Performance Testing
+
+* Good, because it enables scalable testing across multiple scenarios
+* Good, because it provides a consistent testing environment
+* Good, because it generates detailed, automated metrics
+* Bad, because it introduces additional costs
+* Bad, because it requires complex setup
+* Bad, because it may have network variance affecting results
+* Bad, because it may raise privacy concerns with external services
+
+### Real User Monitoring
+
+* Good, because it captures actual usage data from diverse environments
+* Good, because it provides real-world metrics and usage patterns
+* Good, because it enables detection of issues in production
+* Bad, because it raises significant privacy concerns
+* Bad, because it may introduce data bias
+* Bad, because it requires complex implementation
+* Bad, because it has limited control over testing conditions
+
+## More Information
 
 ### Performance Targets
 
-#### Git Operations
+* Git operations: ≤ 110% of native git time
+* UI updates: < 16ms (60fps)
+* Memory usage: < 200MB baseline
+* CPU usage: < 10% idle state
 
-__Rationale__: GitFairy should maintain performance close to native git operations.
+### Implementation Details
 
-##### Benchmarks
+#### Benchmarking Framework
 
 ```rust
 use criterion::{criterion_group, criterion_main, Criterion};
@@ -67,20 +130,7 @@ criterion_group!(benches, git_benchmark);
 criterion_main!(benches);
 ```
 
-##### Performance Targets
-
-- Git operations: ≤ 110% of native git time
-- UI updates: < 16ms (60fps)
-- Memory usage: < 200MB baseline
-- CPU usage: < 10% idle state
-
-### API Rate Limiting
-
-#### Implementation Strategy
-
-__Rationale__: Respect provider limits while maintaining responsiveness.
-
-##### Rate Limiter
+#### API Rate Limiting
 
 ```rust
 use std::time::{Duration, Instant};
@@ -105,13 +155,7 @@ impl RateLimiter {
 }
 ```
 
-### Performance Testing
-
-#### CI/CD Integration
-
-__Rationale__: Automated testing provides consistent performance metrics.
-
-##### Test Configuration
+#### CI/CD Test Configuration
 
 ```yaml
 performance:
@@ -141,9 +185,7 @@ performance:
     - throughput
 ```
 
-### Resource Management
-
-#### Memory Optimization
+### Resource Management Strategies
 
 1. __Lazy Loading__
    - Load repository data on demand
@@ -162,24 +204,6 @@ performance:
    - Temporary file removal
    - Memory defragmentation
    - Resource reclamation
-
-### Future Telemetry
-
-#### Opt-in Performance Monitoring
-
-1. __Metrics Collection__
-   - Operation timing
-   - Resource usage
-   - Error rates
-   - API usage
-
-2. __Privacy Controls__
-   - User consent required
-   - Anonymized data only
-   - Local aggregation
-   - Data retention limits
-
-## Implementation Notes
 
 ### Performance Monitoring
 
@@ -207,64 +231,10 @@ performance:
    - Network conditions
    - Concurrent operations
 
-## Related Decisions
+### Related Decisions
 
-- [D0001: Language](D0001-Language.md)
-- [D0009: Error Handling](D0009-ErrorHandlingAndLogging.md)
-- [D0011: Security Architecture](D0011-SecurityArchitecture.md)
+- [ADR-0001: Primary Programming Language](adr-0001-primary-programming-language.md)
+- [ADR-0014: Error Handling and Logging](adr-0014-error-handling-and-logging.md)
+- [ADR-0016: Security Architecture](adr-0016-security-architecture.md)
 
-## Other options considered
 
-### Manual Performance Testing
-
-#### Pros
-
-- Simple setup
-- Direct feedback
-- No automation needed
-- Flexible testing
-- Real-world usage
-
-#### Cons
-
-- Inconsistent results
-- Time consuming
-- Limited scenarios
-- Poor reproducibility
-- Resource intensive
-
-### Cloud Performance Testing
-
-#### Pros
-
-- Scalable testing
-- Consistent environment
-- Automated results
-- Multiple scenarios
-- Detailed metrics
-
-#### Cons
-
-- Cost overhead
-- Setup complexity
-- Network variance
-- Limited platforms
-- Privacy concerns
-
-### Real User Monitoring
-
-#### Pros
-
-- Actual usage data
-- Diverse environments
-- Real-world metrics
-- Usage patterns
-- Issue detection
-
-#### Cons
-
-- Privacy concerns
-- Data bias
-- Implementation complexity
-- Overhead costs
-- Limited control
