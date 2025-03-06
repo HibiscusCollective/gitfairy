@@ -9,6 +9,7 @@
 Modern software development heavily relies on third-party dependencies, which introduces potential security risks and legal obligations. We need to establish a comprehensive approach to managing supply chain security and ensuring license compliance across our codebase.
 
 Specifically, we need to address:
+
 1. How to verify the integrity and security of third-party dependencies
 2. How to track and manage the licenses of all dependencies
 3. How to automate compliance checking in our development workflow
@@ -105,33 +106,34 @@ Chosen option: "Automated FOSS tools integration (REUSE, ORT, FOSSology, Renovat
 
 ### Implementation Details
 
-**Supply Chain Security Tools**
+#### Supply Chain Security Tools
 
 1. **Dependency Verification**
-   - Use checksums and lock files for all dependencies
-   - Implement Cargo's `Cargo.lock` and npm's `package-lock.json`
-   - Verify package signatures where available
-   - Use OSS Review Toolkit (ORT) for dependency analysis
+   * Use checksums and lock files for all dependencies
+   * Implement Cargo's `Cargo.lock` and npm's `package-lock.json`
+   * Verify package signatures where available
+   * Use OSS Review Toolkit (ORT) for dependency analysis
 
 2. **Continuous Monitoring and Updates**
-   - Implement [Renovate](https://github.com/renovatebot/renovate) for automated dependency updates
-   - Configure security advisories monitoring
-   - Set up automated dependency update PRs with customized schedules
-   - Use ORT's vulnerability scanner integration
-   - Configure auto-merge for minor and patch updates that pass tests
+   * Implement [Renovate](https://github.com/renovatebot/renovate) for automated dependency updates
+   * Configure security advisories monitoring
+   * Set up automated dependency update PRs with customized schedules
+   * Use ORT's vulnerability scanner integration
+   * Configure auto-merge for minor and patch updates that pass tests
 
 3. **Build Reproducibility**
-   - Use deterministic builds
-   - Document build environment requirements
-   - Implement containerized builds
+   * Use deterministic builds
+   * Document build environment requirements
+   * Implement containerized builds
 
-**License Compliance Tools**
+#### License Compliance Tools
 
 1. **REUSE Compliance**
-   - Implement [REUSE](https://reuse.software/) specification for license information
-   - Add SPDX headers to all source files
-   - Maintain a `LICENSES/` directory with all license texts
-   - Use `reuse` tool to verify compliance
+   * Implement [REUSE](https://reuse.software/) specification for license information
+   * Add SPDX headers to all source files
+   * Maintain a `LICENSES/` directory with all license texts
+   * Use `reuse` tool to verify compliance
+
    ```bash
    # Install REUSE tool
    pip install reuse
@@ -141,7 +143,8 @@ Chosen option: "Automated FOSS tools integration (REUSE, ORT, FOSSology, Renovat
    ```
 
 2. **License Scanning and Analysis**
-   - Use [OSS Review Toolkit (ORT)](https://github.com/oss-review-toolkit/ort) for comprehensive scanning
+   * Use [OSS Review Toolkit (ORT)](https://github.com/oss-review-toolkit/ort) for comprehensive scanning
+
    ```bash
    # Run ORT analyzer
    ort analyze -i path/to/project -o ort-results
@@ -149,23 +152,25 @@ Chosen option: "Automated FOSS tools integration (REUSE, ORT, FOSSology, Renovat
    # Run ORT evaluator
    ort evaluate -i ort-results/analyzer-result.yml -o ort-results
    ```
-   - Use [FOSSology](https://www.fossology.org/) for deeper license analysis when needed
+
+   * Use [FOSSology](https://www.fossology.org/) for deeper license analysis when needed
+
    ```bash
    # Run FOSSology analysis
    fossology-cli -p "Project Name" path/to/source
    ```
 
 3. **License Compatibility Checking**
-   - Maintain an allowed licenses list
-   - Use ORT's policy evaluator to check against allowed licenses
-   - Document license compatibility matrix
+   * Maintain an allowed licenses list
+   * Use ORT's policy evaluator to check against allowed licenses
+   * Document license compatibility matrix
 
 4. **License Documentation**
-   - Generate SBOM (Software Bill of Materials) using ORT
-   - Use REUSE to maintain proper license attribution
-   - Generate comprehensive license notices with ORT reporter
+   * Generate SBOM (Software Bill of Materials) using ORT
+   * Use REUSE to maintain proper license attribution
+   * Generate comprehensive license notices with ORT reporter
 
-**CI/CD Integration**
+#### CI/CD Integration
 
 ```yaml
 # GitHub Actions workflow example
@@ -232,28 +237,30 @@ jobs:
           token: ${{ secrets.RENOVATE_TOKEN }}
 ```
 
-**Approved License List**
+#### Approved License List
 
-- MIT
-- Apache 2.0
-- BSD (2-clause and 3-clause)
-- ISC
-- Zlib
+* GPL (any version)
+* AGPL (any version)
+* LGPL (any version)
+* MIT
+* Apache 2.0
+* BSD (2-clause and 3-clause)
+* ISC
+* Zlib
 
-**Licenses Requiring Review**
+#### Licenses Requiring Review
 
-- LGPL (any version)
-- MPL (any version)
-- EPL (any version)
+* MPL (any version)
+* EPL (any version)
+* Other OSI-approved licenses not listed above
 
-**Prohibited Licenses**
+#### Prohibited Licenses
 
-- GPL (any version)
-- AGPL (any version)
-- SSPL
-- Proprietary licenses
+* SSPL
+* Proprietary licenses
+* Non-OSI approved licenses
 
-**OpenChain Compliance**
+#### OpenChain Compliance
 
 We will work toward [OpenChain](https://www.openchainproject.org/) compliance as a long-term goal, which includes:
 
@@ -264,7 +271,7 @@ We will work toward [OpenChain](https://www.openchainproject.org/) compliance as
 5. Understanding FOSS community engagement
 6. Adhering to the OpenChain Specification
 
-**Automated Dependency Management with Renovate**
+#### Automated Dependency Management with Renovate
 
 ```json
 // renovate.json
@@ -300,12 +307,12 @@ We will work toward [OpenChain](https://www.openchainproject.org/) compliance as
 }
 ```
 
-**Automated Review Process**
+#### Automated Review Process
 
 1. Automated tools flag dependencies with:  
-   - Security vulnerabilities (high/critical auto-rejected)
-   - Non-approved licenses (prohibited licenses auto-rejected)
-   - Missing license information
+   * Security vulnerabilities (high/critical auto-rejected)
+   * Non-approved licenses (prohibited licenses auto-rejected)
+   * Missing license information
 
 2. Renovate creates PRs for updates with appropriate labels
 

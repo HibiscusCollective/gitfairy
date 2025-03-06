@@ -21,6 +21,7 @@ The solution must work reliably on Windows, macOS, and Linux, while supporting o
 * Support for platform-specific signing tools
 
 Additional desired features:
+
 * IDE integration
 * Caching of build artifacts
 * Environment isolation
@@ -52,6 +53,7 @@ Chosen option: "Mise-en-place + Dagger", because this combination provides cross
 ### Confirmation
 
 Implementation will be confirmed through:
+
 * Successful setup of development environments across all target platforms
 * CI/CD pipeline validation
 * Automated environment setup testing
@@ -133,67 +135,67 @@ A programmable CI/CD engine that runs pipelines in containers.
 
 #### Development Environment
 
-- Use Mise-en-place for environment management:
-  - Define dependencies in `.mise.toml`
-  - Include Rust toolchain
-  - Platform-specific build tools
-  - Development dependencies
-  - Task running configuration
-  - Build commands
-  - Test runners
-  - Linting and formatting
-  - Platform-specific tasks
+* Use Mise-en-place for environment management:
+  * Define dependencies in `.mise.toml`
+  * Include Rust toolchain
+  * Platform-specific build tools
+  * Development dependencies
+  * Task running configuration
+  * Build commands
+  * Test runners
+  * Linting and formatting
+  * Platform-specific tasks
 
 #### CI/CD Pipeline
 
-- Dagger pipeline configuration:
-  - Build environment setup
-  - Cross-platform compilation
-  - Installer creation
-  - Code signing
-  - Testing and validation
+* Dagger pipeline configuration:
+  * Build environment setup
+  * Cross-platform compilation
+  * Installer creation
+  * Code signing
+  * Testing and validation
 
 #### Platform-Specific Setup
 
 ##### Windows
 
-- WiX toolset integration through direct installation
-- Visual Studio Build Tools management
-- Code signing tools
+* WiX toolset integration through direct installation
+* Visual Studio Build Tools management
+* Code signing tools
 
 ##### macOS
 
-- XCode command line tools
-- pkgbuild and productbuild
-- Notarization tools
+* XCode command line tools
+* pkgbuild and productbuild
+* Notarization tools
 
 ##### Linux
 
-- Standard build tools
-- Debian packaging utilities
-- AppImage creation tools
+* Standard build tools
+* Debian packaging utilities
+* AppImage creation tools
 
 ### Risks and Mitigations
 
 #### Risks
 
-- Platform-specific tool availability
-- Build reproducibility across environments
-- CI/CD environment consistency
-- Learning curve for new developers
-- Limited IDE integration
+* Platform-specific tool availability
+* Build reproducibility across environments
+* CI/CD environment consistency
+* Learning curve for new developers
+* Limited IDE integration
 
 #### Mitigations
 
-- Comprehensive documentation
-- CI/CD validation of builds
-- Automated environment setup
-- Platform-specific test matrices
-- IDE configuration templates
+* Comprehensive documentation
+* CI/CD validation of builds
+* Automated environment setup
+* Platform-specific test matrices
+* IDE configuration templates
 
 ### Related Decisions
 
-- [ADR-0001: Primary Programming Language](adr-0001-primary-programming-language.md)
-- [ADR-0002: Linting and Formatting Tools](adr-0002-linting-and-formatting-tools.md)
-- [ADR-0008: Package Management and Documentation](adr-0008-package-management-and-documentation.md)
-- [ADR-0011: Installers](adr-0011-installers.md)
+* [ADR-0001: Primary Programming Language](adr-0001-primary-programming-language.md)
+* [ADR-0002: Linting and Formatting Tools](adr-0002-linting-and-formatting-tools.md)
+* [ADR-0008: Package Management and Documentation](adr-0008-package-management-and-documentation.md)
+* [ADR-0011: Installers](adr-0011-installers.md)

@@ -45,6 +45,7 @@ Chosen option: "Sigstore + Platform-Required Certificates", because this combina
 ### Confirmation
 
 Implementation will be confirmed through:
+
 * Successful signing of artifacts across all target platforms
 * Verification of signed artifacts
 * Successful submission to platform app stores
@@ -102,80 +103,80 @@ Open source signing solution without platform-specific certificates.
 
 #### Setup Requirements
 
-- Sigstore CLI installation
-- Platform developer accounts:
-  - Microsoft Partner Center
-  - Apple Developer Program
-  - Ubuntu/Debian repository keys
+* Sigstore CLI installation
+* Platform developer accounts:
+  * Microsoft Partner Center
+  * Apple Developer Program
+  * Ubuntu/Debian repository keys
 
 #### Configuration
 
-- CircleCI signing workflow
-- Key management system
-- Verification procedures
-- Audit logging setup
+* CircleCI signing workflow
+* Key management system
+* Verification procedures
+* Audit logging setup
 
 ### Risks and Mitigations
 
 #### Risks
 
-- Multiple signing systems complexity
-- Key management overhead
-- Cost of platform certificates
-- Potential signing process failures
+* Multiple signing systems complexity
+* Key management overhead
+* Cost of platform certificates
+* Potential signing process failures
 
 #### Mitigations
 
-- Automated signing processes
-- Secure key storage solutions
-- Clear documentation
-- Regular security audits
+* Automated signing processes
+* Secure key storage solutions
+* Clear documentation
+* Regular security audits
 
 ### Future Growth Plan
 
 1. **Phase 1 (Current)**:
 
-   - Sigstore for general code signing
-   - Platform-specific certs only where required
-   - Basic automation and CI/CD integration
+   * Sigstore for general code signing
+   * Platform-specific certs only where required
+   * Basic automation and CI/CD integration
 
 2. **Phase 2 (Growth)**:
 
-   - Apply for SignPath open source certificate
-   - Enhance automation and monitoring
-   - Implement advanced security measures
+   * Apply for SignPath open source certificate
+   * Enhance automation and monitoring
+   * Implement advanced security measures
 
 3. **Phase 3 (Scale)**:
 
-   - Evaluate enterprise signing solutions if needed
-   - Expand security and compliance measures
-   - Enhance monitoring and alerting
+   * Evaluate enterprise signing solutions if needed
+   * Expand security and compliance measures
+   * Enhance monitoring and alerting
 
 ### Related Decisions
 
-- [ADR-0002: Integration with CI/CD toolkit](adr-0002-linting-and-formatting-tools.md)
-- [ADR-0009: Workspace management for signing keys](adr-0009-workspace-management.md)
-- [ADR-0011: Platform-specific installation signing](adr-0011-installers.md)
+* [ADR-0002: Integration with CI/CD toolkit](adr-0002-linting-and-formatting-tools.md)
+* [ADR-0009: Workspace management for signing keys](adr-0009-workspace-management.md)
+* [ADR-0011: Platform-specific installation signing](adr-0011-installers.md)
 
 ### Platform-Specific Implementation Notes
 
 #### Windows Store
 
-- Partner Center account required
-- One-time registration fee
-- Sigstore for initial code signing
-- Plan migration path to SignPath
+* Partner Center account required
+* One-time registration fee
+* Sigstore for initial code signing
+* Plan migration path to SignPath
 
 #### Mac App Store
 
-- Apple Developer Program required
-- $99/year includes all certificates
-- Automated notarization available
-- Good tooling support
+* Apple Developer Program required
+* $99/year includes all certificates
+* Automated notarization available
+* Good tooling support
 
 #### Linux Repositories
 
-- GPG key generation is free
-- Repository hosting costs vary
-- Good automation options
-- Community tools available
+* GPG key generation is free
+* Repository hosting costs vary
+* Good automation options
+* Community tools available

@@ -36,6 +36,7 @@ Chosen option: "Tauri + Leptos for UI framework and native integration", because
 ### Confirmation
 
 Implementation will be confirmed through:
+
 * Successful integration of UI components with Tauri and Leptos.
 * Automated testing of accessibility and responsiveness.
 * User feedback on the native look and feel.
@@ -76,7 +77,7 @@ Implementation will be confirmed through:
 
 #### Core Framework: Tauri + Leptos
 
-__Rationale__: Tauri provides native OS integration while Leptos offers a modern reactive framework with server-side rendering capabilities.
+**Rationale**: Tauri provides native OS integration while Leptos offers a modern reactive framework with server-side rendering capabilities.
 
 ##### Code Example
 
@@ -104,19 +105,19 @@ fn NativeButton(
 
 #### Platform-Native Components
 
-__Rationale__: Leveraging platform-specific design guidelines ensures consistency with each operating system.
+**Rationale**: Leveraging platform-specific design guidelines ensures consistency with each operating system.
 
 ##### Implementation Details
 
-- Windows: Fluent Design System
-- macOS: SF Symbols and HIG
-- Linux: Adherence to current desktop themes, with fallback to custom components
+* Windows: Fluent Design System
+* macOS: SF Symbols and HIG
+* Linux: Adherence to current desktop themes, with fallback to custom components
 
 ### Accessibility Standards
 
 #### Implementation: Platform APIs + Leptonic
 
-__Rationale__: Combining built-in accessibility features from Leptonic with direct OS API calls ensures comprehensive coverage.
+**Rationale**: Combining built-in accessibility features from Leptonic with direct OS API calls ensures comprehensive coverage.
 
 ##### Code Example
 
@@ -154,7 +155,7 @@ impl PlatformAccessibility {
 
 #### Implementation: ICU4X + Fluent
 
-__Rationale__: ICU4X supports comprehensive internationalization while Fluent provides a modern localization framework.
+**Rationale**: ICU4X supports comprehensive internationalization while Fluent provides a modern localization framework.
 
 ##### Code Example
 

@@ -22,14 +22,13 @@
 !src/ui/src-tauri/**/
 
 ##### Linters ######
-!.config/
+!.config
 !.linters
 # Commits
 !.czrc
 !commitlint.config.mjs
 # Markdown
-!.markdownlint-cli2.yaml
-!.markdown-link-check.json
+!.markdownlint-cli2.jsonc
 # Spelling
 !.cspell.json
 # Rust
@@ -52,7 +51,7 @@
 !.gitattributes
 !.lefthook.yml
 !.mise.toml
-!.tasks.toml
+!tasks.*.toml
 
 ##### Pipeline #####
 !.github

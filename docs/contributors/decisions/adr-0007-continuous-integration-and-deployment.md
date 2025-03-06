@@ -205,29 +205,29 @@ ORT is a toolkit to assist with reviewing open source software dependencies.
 Our CI/CD pipeline will consist of the following stages:
 
 1. **Build and Test**
-   - Compile code for multiple platforms
-   - Run unit and integration tests
-   - Generate code coverage reports
+   * Compile code for multiple platforms
+   * Run unit and integration tests
+   * Generate code coverage reports
 
 2. **Code Quality**
-   - Run linters and formatters
-   - Analyze code quality metrics
-   - Check for code smells and anti-patterns
+   * Run linters and formatters
+   * Analyze code quality metrics
+   * Check for code smells and anti-patterns
 
 3. **Security Scanning**
-   - Run SAST tools (Trivy, OpenGrep)
-   - Check dependencies for vulnerabilities
-   - Validate license compliance
+   * Run SAST tools (Trivy, OpenGrep)
+   * Check dependencies for vulnerabilities
+   * Validate license compliance
 
 4. **Documentation**
-   - Build and verify documentation
-   - Check for broken links
-   - Validate API documentation
+   * Build and verify documentation
+   * Check for broken links
+   * Validate API documentation
 
 5. **Release**
-   - Create release artifacts
-   - Generate changelogs
-   - Publish to distribution channels
+   * Create release artifacts
+   * Generate changelogs
+   * Publish to distribution channels
 
 ### GitHub Actions Workflow Examples
 

@@ -45,6 +45,7 @@ Chosen option: "OAuth + SSH + Platform Keychain + Automatic Updates", because it
 ### Confirmation
 
 Implementation will be confirmed through:
+
 * Security audit of credential storage implementation
 * Successful OAuth authentication flows with major Git providers
 * Verification of SSH key management
@@ -231,38 +232,36 @@ impl UpdateConfig {
 
 ### Security Measures
 
-1. __Authentication__
-   - OAuth 2.0 flow
-   - SSH key management
-   - Platform keychain
-   - Session handling
+1. **Authentication**
+   * OAuth 2.0 flow
+   * SSH key management
+   * Platform keychain
+   * Session handling
 
-2. __Data Protection__
-   - Credential encryption
-   - Secure storage
-   - Memory protection
-   - Cache clearing
+2. **Data Protection**
+   * Credential encryption
+   * Secure storage
+   * Memory protection
+   * Cache clearing
 
-3. __Update Security__
-   - Code signing
-   - Update verification
-   - Rollback support
-   - Delta updates
+3. **Update Security**
+   * Code signing
+   * Update verification
+   * Rollback support
+   * Delta updates
 
-4. __Monitoring__
-   - Dependency scanning
-   - Security advisories
-   - Update notifications
-   - Error tracking
+4. **Monitoring**
+   * Dependency scanning
+   * Security advisories
+   * Update notifications
+   * Error tracking
 
 ### Security and Privacy Policies
 
-- [Security Policy](https://github.com/HibiscusCollective/.github/blob/main/docs/SECURITY.md)
+* [Security Policy](https://github.com/HibiscusCollective/.github/blob/main/docs/SECURITY.md)
 
 ### Related Decisions
 
-- [ADR-0010: Code Signing](adr-0010-code-signing.md)
-- [ADR-0011: Installers](adr-0011-installers.md)
-- [ADR-0014: Error Handling and Logging](adr-0014-error-handling-and-logging.md)
-
-
+* [ADR-0010: Code Signing](adr-0010-code-signing.md)
+* [ADR-0011: Installers](adr-0011-installers.md)
+* [ADR-0014: Error Handling and Logging](adr-0014-error-handling-and-logging.md)

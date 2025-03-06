@@ -25,6 +25,7 @@ The installation process must be GUI-based, dependency-free, and support platfor
 ### Platform-Specific Requirements
 
 #### Windows
+
 * MSI package format
 * Context menu registration
 * Start menu integration
@@ -32,6 +33,7 @@ The installation process must be GUI-based, dependency-free, and support platfor
 * Windows Store compatibility
 
 #### macOS
+
 * DMG and pkg formats
 * Context menu integration via Services
 * Apple Silicon + Intel support
@@ -39,6 +41,7 @@ The installation process must be GUI-based, dependency-free, and support platfor
 * Gatekeeper compliance
 
 #### Linux
+
 * Primary: DEB package for Debian/Ubuntu
 * Secondary: RPM for Fedora/RHEL
 * AppImage for universal support
@@ -68,6 +71,7 @@ Chosen option: "Tauri + Platform-Specific Tools", because this combination provi
 ### Confirmation
 
 Implementation will be confirmed through:
+
 * Successful creation of installers for all target platforms
 * Verification of platform-specific features (context menus, file associations)
 * Successful submission to app stores where applicable
@@ -157,96 +161,96 @@ A format for distributing portable software on Linux.
 
 #### Base Bundle (Tauri)
 
-- Core application packaging
-- Basic resource bundling
-- Update framework
-- Cross-platform consistency
+* Core application packaging
+* Basic resource bundling
+* Update framework
+* Cross-platform consistency
 
 #### Windows Implementation
 
-- WiX Toolset for MSI creation
-- Context menu registration
-- Start menu integration
-- File association handling
-- Windows Store compatibility
-- Sigstore signing integration
+* WiX Toolset for MSI creation
+* Context menu registration
+* Start menu integration
+* File association handling
+* Windows Store compatibility
+* Sigstore signing integration
 
 #### macOS Implementation
 
-- create-dmg for DMG creation
-- pkgbuild for pkg installer
-- Services integration for context menu
-- Notarization workflow
-- App Store submission process
-- Universal binary support
+* create-dmg for DMG creation
+* pkgbuild for pkg installer
+* Services integration for context menu
+* Notarization workflow
+* App Store submission process
+* Universal binary support
 
 #### Linux Implementation
 
-- cargo-deb for DEB package creation
-- cargo-generate-rpm for RPM package creation
-- AppImage tooling
-- Desktop integration
-- Dependency handling
-- Package manager integration
+* cargo-deb for DEB package creation
+* cargo-generate-rpm for RPM package creation
+* AppImage tooling
+* Desktop integration
+* Dependency handling
+* Package manager integration
 
 ### Risks and Mitigations
 
 #### Risks
 
-- Complex CI/CD Setup: Multiple platform-specific build steps
-- Store Compliance: Different requirements per store
-- Context Menu: Platform-specific implementation challenges
-- Binary Size: Multiple architecture support impact
-- Update Mechanism: Platform-specific constraints
+* Complex CI/CD Setup: Multiple platform-specific build steps
+* Store Compliance: Different requirements per store
+* Context Menu: Platform-specific implementation challenges
+* Binary Size: Multiple architecture support impact
+* Update Mechanism: Platform-specific constraints
 
 #### Mitigations
 
-- Modular CI/CD pipeline design
-- Comprehensive testing per platform
-- Clear documentation
-- Size optimization strategies
-- Staged roll-outs
-- Comprehensive error handling
+* Modular CI/CD pipeline design
+* Comprehensive testing per platform
+* Clear documentation
+* Size optimization strategies
+* Staged roll-outs
+* Comprehensive error handling
 
 ### Linux Distribution Support
 
 #### Primary Tier (Full Support)
 
-- Debian/Ubuntu (DEB)
-- Fedora/RHEL (RPM)
-- Any distro via AppImage
+* Debian/Ubuntu (DEB)
+* Fedora/RHEL (RPM)
+* Any distro via AppImage
 
 #### Secondary Tier (Package Manager)
 
-- Arch Linux (AUR)
-- openSUSE
-- Gentoo
+* Arch Linux (AUR)
+* openSUSE
+* Gentoo
 
 ### Platform-Specific Implementation Notes
 
 #### Windows Store
 
-- MSIX package creation
-- Context menu via package manifest
-- Store submission automation
-- Update channel management
+* MSIX package creation
+* Context menu via package manifest
+* Store submission automation
+* Update channel management
 
 #### Mac App Store
 
-- App sandboxing requirements
-- Entitlements configuration
-- Store review guidelines
-- Update process handling
+* App sandboxing requirements
+* Entitlements configuration
+* Store review guidelines
+* Update process handling
 
 #### Linux Package Managers
 
-- Repository setup
-- Package maintenance
-- Dependency handling
-- Update distribution
+* Repository setup
+* Package maintenance
+* Dependency handling
+* Update distribution
 
 ### Related Decisions
 
-- [ADR-0001: Primary Programming Language](adr-0001-primary-programming-language.md)
-- [ADR-0009: Workspace Management](adr-0009-workspace-management.md)
-- [ADR-0010: Code Signing Solution](adr-0010-code-signing.md)
+* [ADR-0001: Primary Programming Language](adr-0001-primary-programming-language.md)
+* [ADR-0009: Workspace Management](adr-0009-workspace-management.md)
+* [ADR-0010: Code Signing Solution](adr-0010-code-signing.md)

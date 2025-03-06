@@ -59,6 +59,7 @@ Chosen option: "Native Rust Tools for Unit Testing + TestContainers/Docker for I
 ### Confirmation
 
 Implementation will be confirmed through:
+
 * Successful execution of the complete test suite across all platforms
 * Integration of all test types in the CI/CD pipeline
 * Verification of context menu and installer functionality
@@ -151,43 +152,43 @@ Implementation will be confirmed through:
 
 #### Unit Testing Implementation
 
-- Use `#[test]` attribute for unit tests
-- Leverage `#[cfg(test)]` for test modules
-- Use `cargo test` for execution
-- Implement `proptest` for property testing
-- Use real dependencies over mocks whenever possible
-- Implement `cargo-mutants` for mutation testing
+* Use `#[test]` attribute for unit tests
+* Leverage `#[cfg(test)]` for test modules
+* Use `cargo test` for execution
+* Implement `proptest` for property testing
+* Use real dependencies over mocks whenever possible
+* Implement `cargo-mutants` for mutation testing
 
 ##### Mutation Testing Strategy
 
-- Use `cargo-mutants` to verify test effectiveness
-- Run mutation tests in CI weekly
-- Focus on critical business logic paths
-- Track mutation score as quality metric
-- Use results to identify under-tested code
+* Use `cargo-mutants` to verify test effectiveness
+* Run mutation tests in CI weekly
+* Focus on critical business logic paths
+* Track mutation score as quality metric
+* Use results to identify under-tested code
 
 #### Integration Testing Implementation
 
-- Use `testcontainers-rs` crate
-- Deploy Gitea container for Git operations
-- Use Keycloak container for OAuth testing
-- Define reusable container configurations
+* Use `testcontainers-rs` crate
+* Deploy Gitea container for Git operations
+* Use Keycloak container for OAuth testing
+* Define reusable container configurations
 
 #### E2E Testing Implementation
 
-- Use `playwright-rs` for Rust integration
-- Implement custom commands for desktop application context menu
-- Record test artifacts in CI
-- Define platform-specific test paths for desktop application testing
-- Implement retry mechanisms
+* Use `playwright-rs` for Rust integration
+* Implement custom commands for desktop application context menu
+* Record test artifacts in CI
+* Define platform-specific test paths for desktop application testing
+* Implement retry mechanisms
 
 #### Installer Testing Implementation
 
-- Use Windows HLK for Windows installer testing
-- QEMU + Ansible for Linux/macOS validation
-- Implement cleanup procedures
-- Validate system state post-install
-- Test upgrade scenarios
+* Use Windows HLK for Windows installer testing
+* QEMU + Ansible for Linux/macOS validation
+* Implement cleanup procedures
+* Validate system state post-install
+* Test upgrade scenarios
 
 ### Platform Testing Matrix
 
@@ -213,86 +214,86 @@ Linux:
 
 ### Test Environment Setup
 
-- Use mise-en-place for dependency management
-- Define platform-specific test runners
-- Implement parallel test execution
-- Configure test artifact collection
-- Set up coverage reporting
+* Use mise-en-place for dependency management
+* Define platform-specific test runners
+* Implement parallel test execution
+* Configure test artifact collection
+* Set up coverage reporting
 
 ### CI/CD Integration
 
-- Run unit tests on all PRs
-- Execute integration and E2E tests on all PRs
-- Provide self-hosted runners for fork contributions
-- Cache test containers and dependencies
-- Archive test artifacts
+* Run unit tests on all PRs
+* Execute integration and E2E tests on all PRs
+* Provide self-hosted runners for fork contributions
+* Cache test containers and dependencies
+* Archive test artifacts
 
 ### Fork Contribution Strategy
 
-- Maintain pool of self-hosted runners
-- Implement security measures for fork PRs
-- Automated runner cleanup post-test
-- Cost covered by project maintainers
-- Rate limiting for abuse prevention
+* Maintain pool of self-hosted runners
+* Implement security measures for fork PRs
+* Automated runner cleanup post-test
+* Cost covered by project maintainers
+* Rate limiting for abuse prevention
 
 ### Resource Optimization
 
-- Parallel test execution
-- Smart test splitting
-- Container layer caching
-- Dependency caching
-- Test suite optimization
+* Parallel test execution
+* Smart test splitting
+* Container layer caching
+* Dependency caching
+* Test suite optimization
 
 ### Test Categories
 
 1. **Unit Tests**
-   - Business logic
-   - Data structures
-   - Error handling
-   - Configuration parsing
-   - File operations
+   * Business logic
+   * Data structures
+   * Error handling
+   * Configuration parsing
+   * File operations
 
 2. **Integration Tests**
-   - Git operations
-   - OAuth flows
-   - Config management
-   - File system operations
-   - IPC communication
+   * Git operations
+   * OAuth flows
+   * Config management
+   * File system operations
+   * IPC communication
 
 3. **E2E Tests**
-   - Context menu registration
-   - Application launch
-   - UI interactions
-   - Error scenarios
-   - Update process
+   * Context menu registration
+   * Application launch
+   * UI interactions
+   * Error scenarios
+   * Update process
 
 4. **Installer Tests**
-   - Clean installation
-   - Upgrade scenarios
-   - Uninstallation
-   - Side-by-side installations
-   - System integration
+   * Clean installation
+   * Upgrade scenarios
+   * Uninstallation
+   * Side-by-side installations
+   * System integration
 
 ### Risks and Mitigations
 
 #### Risks
 
-- Complex cross-platform setup
-- CI resource requirements
-- Flaky E2E tests
-- Environment cleanup failures
-- Long test execution times
+* Complex cross-platform setup
+* CI resource requirements
+* Flaky E2E tests
+* Environment cleanup failures
+* Long test execution times
 
 #### Mitigations
 
-- Containerized test environments
-- Parallel test execution
-- Robust retry mechanisms
-- Automated cleanup procedures
-- Test suite optimization
+* Containerized test environments
+* Parallel test execution
+* Robust retry mechanisms
+* Automated cleanup procedures
+* Test suite optimization
 
 ### Related Decisions
 
-- [ADR-0001: Primary Programming Language](adr-0001-primary-programming-language.md)
-- [ADR-0009: Workspace Management](adr-0009-workspace-management.md)
-- [ADR-0011: Installers](adr-0011-installers.md)
+* [ADR-0001: Primary Programming Language](adr-0001-primary-programming-language.md)
+* [ADR-0009: Workspace Management](adr-0009-workspace-management.md)
+* [ADR-0011: Installers](adr-0011-installers.md)

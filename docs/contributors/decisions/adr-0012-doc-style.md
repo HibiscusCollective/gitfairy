@@ -50,6 +50,7 @@ Chosen option: "RedHat Style Guide + Vale CLI", because this combination provide
 ### Confirmation
 
 Implementation will be confirmed through:
+
 * Successful integration of Vale CLI in the CI/CD pipeline
 * Verification of documentation against the RedHat style guidelines
 * Contributor feedback on usability
@@ -143,10 +144,10 @@ An open-source linting tool for text and markdown.
 
 #### Style Guide Implementation
 
-- Adopt RedHat style guide rules
-- Create custom style extensions
-- Document exceptions and overrides
-- Provide quick reference guides
+* Adopt RedHat style guide rules
+* Create custom style extensions
+* Document exceptions and overrides
+* Provide quick reference guides
 
 #### Vale Configuration
 
@@ -191,73 +192,73 @@ documentation:
 
 #### Translation Workflow
 
-- Structured content guidelines
-- Term glossary maintenance
-- Translation memory setup
-- Review process definition
+* Structured content guidelines
+* Term glossary maintenance
+* Translation memory setup
+* Review process definition
 
 ### Style Priorities
 
 1. **Clarity First**
 
-   - Short sentences
-   - Active voice
-   - Simple words
-   - Clear structure
-   - Consistent terminology
+   * Short sentences
+   * Active voice
+   * Simple words
+   * Clear structure
+   * Consistent terminology
 
 2. **Translation Optimization**
 
-   - Avoid idioms
-   - Use standard punctuation
-   - Maintain glossaries
-   - Consistent formatting
-   - Clear references
+   * Avoid idioms
+   * Use standard punctuation
+   * Maintain glossaries
+   * Consistent formatting
+   * Clear references
 
 3. **Inclusive Language**
 
-   - Gender-neutral terms
-   - Cultural sensitivity
-   - Accessibility awareness
-   - Bias-free examples
-   - Respectful terminology
+   * Gender-neutral terms
+   * Cultural sensitivity
+   * Accessibility awareness
+   * Bias-free examples
+   * Respectful terminology
 
 ### Contributor Guidelines
 
 1. **Quick Start**
 
-   - Install Vale CLI
-   - Run local checks
-   - Common fixes
-   - Override examples
-   - Style reference
+   * Install Vale CLI
+   * Run local checks
+   * Common fixes
+   * Override examples
+   * Style reference
 
 2. **Advanced Usage**
 
-   - Custom vocabulary
-   - Rule configuration
-   - Integration setup
-   - Performance tips
-   - Troubleshooting
+   * Custom vocabulary
+   * Rule configuration
+   * Integration setup
+   * Performance tips
+   * Troubleshooting
 
 ### Risks and Mitigations
 
 #### Risks
 
-- Learning curve for contributors
-- False positives in linting
-- Translation complexity
-- Maintenance overhead
+* Learning curve for contributors
+* False positives in linting
+* Translation complexity
+* Maintenance overhead
 
 #### Mitigations
 
-- Comprehensive onboarding docs
-- Regular rule refinement
-- Translation tooling automation
-- Clear update process
+* Comprehensive onboarding docs
+* Regular rule refinement
+* Translation tooling automation
+* Clear update process
 
 ### Related Decisions
 
-- [ADR-0002: Linting and Formatting Tools](adr-0002-linting-and-formatting-tools.md)
-- [ADR-0008: Package Management and Documentation](adr-0008-package-management-and-documentation.md)
-- [ADR-0009: Workspace Management](adr-0009-workspace-management.md)
+* [ADR-0002: Linting and Formatting Tools](adr-0002-linting-and-formatting-tools.md)
+* [ADR-0008: Package Management and Documentation](adr-0008-package-management-and-documentation.md)
+* [ADR-0009: Workspace Management](adr-0009-workspace-management.md)

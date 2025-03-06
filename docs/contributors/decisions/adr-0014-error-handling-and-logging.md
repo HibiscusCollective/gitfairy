@@ -53,6 +53,7 @@ Chosen option: "thiserror + anyhow + SecureFmt for error handling and tracing + 
 ### Confirmation
 
 Implementation will be confirmed through:
+
 * Successful integration of error handling and logging across the application
 * Verification of error recovery mechanisms
 * User feedback on error messages
@@ -149,39 +150,39 @@ pub enum GitFairyError {
 
 #### Error Handling Principles
 
-- Errors should be recoverable whenever possible
-- Users should only see actionable messages
-- Internal errors should be logged but handled gracefully
-- Error context should be preserved for debugging
-- Error handling should be consistent across the application
+* Errors should be recoverable whenever possible
+* Users should only see actionable messages
+* Internal errors should be logged but handled gracefully
+* Error context should be preserved for debugging
+* Error handling should be consistent across the application
 
 #### Logging Principles
 
-- Structured logging by default
-- No redundant log levels
-- Performance-first approach
-- Privacy-respecting
-- Storage-efficient
+* Structured logging by default
+* No redundant log levels
+* Performance-first approach
+* Privacy-respecting
+* Storage-efficient
 
 ### Recovery Strategies
 
-1. __Automatic Retry__
-   - Network operations
-   - File system access
-   - Git operations
-   - With exponential backoff
+1. **Automatic Retry**
+   * Network operations
+   * File system access
+   * Git operations
+   * With exponential backoff
 
-2. __Fallback Options__
-   - Local cache
-   - Alternative endpoints
-   - Default configurations
-   - Safe mode operation
+2. **Fallback Options**
+   * Local cache
+   * Alternative endpoints
+   * Default configurations
+   * Safe mode operation
 
-3. __User Intervention__
-   - Clear error messages
-   - Suggested actions
-   - Manual retry option
-   - Support links
+3. **User Intervention**
+   * Clear error messages
+   * Suggested actions
+   * Manual retry option
+   * Support links
 
 ### Logging Implementation
 
@@ -220,65 +221,65 @@ pub fn workspace_operation(path: &str, config: &Value) {
 
 #### Opt-in Telemetry
 
-- Disabled by default
-- Explicit user consent required
-- Clear data collection policy
-- Local data preview
-- Export capabilities
+* Disabled by default
+* Explicit user consent required
+* Clear data collection policy
+* Local data preview
+* Export capabilities
 
 #### Metrics Collection
 
-- Operation latency
-- Error frequency
-- Feature usage
-- Performance metrics
-- System information
+* Operation latency
+* Error frequency
+* Feature usage
+* Performance metrics
+* System information
 
 ### User Feedback System
 
 #### Error Reporting
 
-- Automated log packaging
-- Sanitized system information
-- Reproduction steps
-- User comments
-- CodeBerg issue creation
+* Automated log packaging
+* Sanitized system information
+* Reproduction steps
+* User comments
+* CodeBerg issue creation
 
 #### Feedback Channels
 
-- In-app feedback
-- CodeBerg issues
-- Documentation comments
-- Community discord
-- Email support
+* In-app feedback
+* CodeBerg issues
+* Documentation comments
+* Community discord
+* Email support
 
 ### Error Categories
 
-1. __User Errors__
-   - Invalid input
-   - Permission issues
-   - Configuration errors
-   - Missing dependencies
+1. **User Errors**
+   * Invalid input
+   * Permission issues
+   * Configuration errors
+   * Missing dependencies
 
-2. __System Errors__
-   - Network failures
-   - File system errors
-   - Resource exhaustion
-   - Platform-specific issues
+2. **System Errors**
+   * Network failures
+   * File system errors
+   * Resource exhaustion
+   * Platform-specific issues
 
-3. __Application Errors__
-   - State corruption
-   - Version conflicts
-   - Integration failures
-   - Update errors
+3. **Application Errors**
+   * State corruption
+   * Version conflicts
+   * Integration failures
+   * Update errors
 
-4. __Recovery Actions__
-   - Automatic retry
-   - Configuration reload
-   - Cache invalidation
-   - Safe mode activation
+4. **Recovery Actions**
+   * Automatic retry
+   * Configuration reload
+   * Cache invalidation
+   * Safe mode activation
 
 ### Related Decisions
 
-- [ADR-0001: Primary Programming Language](adr-0001-primary-programming-language.md)
-- [ADR-0013: Testing Strategy](adr-0013-testing-strategy.md)
+* [ADR-0001: Primary Programming Language](adr-0001-primary-programming-language.md)
+* [ADR-0013: Testing Strategy](adr-0013-testing-strategy.md)

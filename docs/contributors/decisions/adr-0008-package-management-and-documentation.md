@@ -385,30 +385,30 @@ pre-push:
 
 #### Documentation Structure
 
-- **User Documentation (mdBook)**
-  - Getting Started
-  - User Guide
-  - Configuration
-  - FAQ
-  - Troubleshooting
-  - API Reference
-  - Tutorials
+* **User Documentation (mdBook)**
+  * Getting Started
+  * User Guide
+  * Configuration
+  * FAQ
+  * Troubleshooting
+  * API Reference
+  * Tutorials
 
-- **Contributor Documentation (GitHub Wiki)**
-  - Development Setup
-  - Architecture Overview
-  - Contributing Guidelines
-  - ADRs
-  - API Documentation
-  - Code Style Guide
-  - Testing Strategy
-  - Release Process
+* **Contributor Documentation (GitHub Wiki)**
+  * Development Setup
+  * Architecture Overview
+  * Contributing Guidelines
+  * ADRs
+  * API Documentation
+  * Code Style Guide
+  * Testing Strategy
+  * Release Process
 
-- **Synchronization**
-  - GitHub Action to sync Wiki content to mdBook source
-  - Automated builds and deployment of mdBook to GitHub Pages
-  - Versioned documentation for different releases
-  - Commit hooks to ensure documentation is updated with code changes
+* **Synchronization**
+  * GitHub Action to sync Wiki content to mdBook source
+  * Automated builds and deployment of mdBook to GitHub Pages
+  * Versioned documentation for different releases
+  * Commit hooks to ensure documentation is updated with code changes
 
 #### Integration with CI/CD
 
@@ -460,41 +460,41 @@ jobs:
 
 #### Risks
 
-- **Dual Package Manager Complexity**: Managing two package managers requires clear guidelines and may lead to confusion for new contributors.
-- **Documentation Sync**: Maintaining synchronization between wiki and mdBook requires additional automation and monitoring.
-- **Learning Curve**: Contributors need to learn multiple tools, which may increase onboarding time.
-- **Migration Challenges**: Future migrations might be complex due to tool-specific features and configurations.
-- **Integration Effort**: Integrating documentation workflow with CI/CD requires additional setup and maintenance.
-- **Cross-Platform Compatibility**: Ensuring consistent behavior across different operating systems may be challenging.
-- **Dependency Conflicts**: Potential conflicts between dependencies managed by different package managers.
+* **Dual Package Manager Complexity**: Managing two package managers requires clear guidelines and may lead to confusion for new contributors.
+* **Documentation Sync**: Maintaining synchronization between wiki and mdBook requires additional automation and monitoring.
+* **Learning Curve**: Contributors need to learn multiple tools, which may increase onboarding time.
+* **Migration Challenges**: Future migrations might be complex due to tool-specific features and configurations.
+* **Integration Effort**: Integrating documentation workflow with CI/CD requires additional setup and maintenance.
+* **Cross-Platform Compatibility**: Ensuring consistent behavior across different operating systems may be challenging.
+* **Dependency Conflicts**: Potential conflicts between dependencies managed by different package managers.
 
 #### Mitigations
 
-- **Comprehensive onboarding documentation** with clear examples and step-by-step guides.
-- **Hook execution optimization** to maintain performance and prevent slow pre-commit checks.
-- **Documentation automation** to reduce manual synchronization between wiki and mdBook.
-- **Platform-specific testing** in CI to catch cross-platform issues early in the development process.
-- **Regular dependency audit** to identify and resolve conflicts between package managers.
-- **Containerized development environments** to ensure consistency across platforms.
-- **Detailed troubleshooting guides** for common issues with package managers and git hooks.
-- **Regular review of tool effectiveness** and willingness to adapt if better alternatives emerge.
+* **Comprehensive onboarding documentation** with clear examples and step-by-step guides.
+* **Hook execution optimization** to maintain performance and prevent slow pre-commit checks.
+* **Documentation automation** to reduce manual synchronization between wiki and mdBook.
+* **Platform-specific testing** in CI to catch cross-platform issues early in the development process.
+* **Regular dependency audit** to identify and resolve conflicts between package managers.
+* **Containerized development environments** to ensure consistency across platforms.
+* **Detailed troubleshooting guides** for common issues with package managers and git hooks.
+* **Regular review of tool effectiveness** and willingness to adapt if better alternatives emerge.
 
 ### External References
 
-- [Mise-en-place Documentation](https://mise.jdx.dev/)
-- [Rust Cargo Documentation](https://doc.rust-lang.org/cargo/)
-- [Bun Documentation](https://bun.sh/docs)
-- [Lefthook Documentation](https://github.com/evilmartians/lefthook)
-- [mdBook Documentation](https://rust-lang.github.io/mdBook/)
-- [GitHub Wiki Documentation](https://docs.github.com/en/communities/documenting-your-project-with-wikis)
-- [Bun vs Node.js Comparison](https://bun.sh/docs/runtime/nodejs-apis)
-- [Git Hooks Documentation](https://git-scm.com/docs/githooks)
-- [Documentation as Code Best Practices](https://www.writethedocs.org/guide/docs-as-code/)
+* [Mise-en-place Documentation](https://mise.jdx.dev/)
+* [Rust Cargo Documentation](https://doc.rust-lang.org/cargo/)
+* [Bun Documentation](https://bun.sh/docs)
+* [Lefthook Documentation](https://github.com/evilmartians/lefthook)
+* [mdBook Documentation](https://rust-lang.github.io/mdBook/)
+* [GitHub Wiki Documentation](https://docs.github.com/en/communities/documenting-your-project-with-wikis)
+* [Bun vs Node.js Comparison](https://bun.sh/docs/runtime/nodejs-apis)
+* [Git Hooks Documentation](https://git-scm.com/docs/githooks)
+* [Documentation as Code Best Practices](https://www.writethedocs.org/guide/docs-as-code/)
 
 ## Related Decisions
 
-- [ADR 0001: Primary Programming Language](adr-0001-primary-programming-language.md)
-- [ADR 0002: Linting and Formatting Tools](adr-0002-linting-and-formatting-tools.md)
-- [ADR 0007: Continuous Integration and Deployment](adr-0007-continuous-integration-and-deployment.md)
-- [ADR 0009: Workspace Management](adr-0009-workspace-management.md)
-- [ADR 0012: Documentation Style](adr-0012-doc-style.md)
+* [ADR 0001: Primary Programming Language](adr-0001-primary-programming-language.md)
+* [ADR 0002: Linting and Formatting Tools](adr-0002-linting-and-formatting-tools.md)
+* [ADR 0007: Continuous Integration and Deployment](adr-0007-continuous-integration-and-deployment.md)
+* [ADR 0009: Workspace Management](adr-0009-workspace-management.md)
+* [ADR 0012: Documentation Style](adr-0012-doc-style.md)

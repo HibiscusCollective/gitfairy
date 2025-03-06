@@ -100,7 +100,7 @@ Chosen option: "Changesets with GitOps Workflow", because it provides a comprehe
 
 ### Implementation Details
 
-**Version Management with Changesets**
+#### Version Management with Changesets
 
 [Changesets](https://github.com/changesets/changesets) provides a comprehensive solution for version management and changelog generation.
 
@@ -122,7 +122,7 @@ Chosen option: "Changesets with GitOps Workflow", because it provides a comprehe
 }
 ```
 
-**Release Automation with GitOps Workflow**
+#### Release Automation with GitOps Workflow
 
 ```yaml
 name: Release Management
@@ -159,42 +159,44 @@ jobs:
           # Trigger immediate release
 ```
 
-**Version Criteria**
+#### Version Criteria
 
 1. **Major Version (1.x.x)**
-   - Breaking changes
-   - API modifications
-   - Major UI changes
-   - Immediate release
+   * Breaking changes
+   * API modifications
+   * Major UI changes
+   * Immediate release
 
 2. **Minor Version (x.1.x)**
-   - New features
-   - Non-breaking changes
-   - Deprecations
-   - Weekly release batch
+   * New features
+   * Non-breaking changes
+   * Deprecations
+   * Weekly release batch
 
 3. **Patch Version (x.x.1)**
-   - Bug fixes
-   - Security patches
-   - Documentation
-   - Immediate for security/hotfix
+   * Bug fixes
+   * Security patches
+   * Documentation
+   * Immediate for security/hotfix
 
-**Release Schedule**
+#### Release Schedule
 
-*Pre-1.0.0 Phase*
-- No fixed schedule
-- Release on significant features
-- Security patches immediate
-- Version updates per PR
+##### Pre-1.0.0 Phase
 
-*Post-1.0.0 Phase*
-- Weekly releases (Monday)
-- Security patches immediate
-- Hotfixes immediate
-- Major versions immediate
-- Minor versions batched
+* No fixed schedule
+* Release on significant features
+* Security patches immediate
+* Version updates per PR
 
-**Changelog Management with Conventional Commits**
+##### Post-1.0.0 Phase
+
+* Weekly releases (Monday)
+* Security patches immediate
+* Hotfixes immediate
+* Major versions immediate
+* Minor versions batched
+
+#### Changelog Management with Conventional Commits
 
 ```javascript
 // .commitlintrc.js
@@ -228,31 +230,31 @@ module.exports = {
 };
 ```
 
-**Release Process**
+#### Release Process
 
 1. **Version Update**
-   - PR merged to main
-   - Conventional commit check
-   - Changeset creation
-   - Version bump
+   * PR merged to main
+   * Conventional commit check
+   * Changeset creation
+   * Version bump
 
 2. **Release Criteria**
-   - Security advisory severity
-   - Commit type analysis
-   - Weekly schedule check
-   - Version threshold
+   * Security advisory severity
+   * Commit type analysis
+   * Weekly schedule check
+   * Version threshold
 
 3. **Release Actions**
-   - Build verification
-   - Asset generation
-   - Signature creation
-   - Distribution upload
+   * Build verification
+   * Asset generation
+   * Signature creation
+   * Distribution upload
 
 4. **Post Release**
-   - Changelog update
-   - Documentation sync
-   - Version notification
-   - Monitoring period
+   * Changelog update
+   * Documentation sync
+   * Version notification
+   * Monitoring period
 
 ### Related Decisions
 
