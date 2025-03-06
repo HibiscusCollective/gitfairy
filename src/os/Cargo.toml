@@ -27,8 +27,4 @@ windows = { version = "0.59", optional = true }
 
 tokio.workspace = true
 
-[dev-dependencies]
-clippy.workspace = true
-rustfmt.workspace = true
-cargo-audit.workspace = true
 

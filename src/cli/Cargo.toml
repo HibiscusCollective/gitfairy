@@ -11,8 +11,3 @@ description = "Command-line interface for Git repository navigation and manageme
 clap = { version = "4.4", features = ["derive"] }
 libgitfairy.workspace = true
 tokio.workspace = true
-
-[dev-dependencies]
-clippy.workspace = true
-rustfmt.workspace = true
-cargo-audit.workspace = true

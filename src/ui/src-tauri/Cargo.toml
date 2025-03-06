@@ -24,8 +24,3 @@ libgitfairy.workspace = true
 tokio.workspace = true
 serde.workspace = true
 serde_json.workspace = true
-
-[dev-dependencies]
-clippy.workspace = true
-rustfmt.workspace = true
-cargo-audit.workspace = true

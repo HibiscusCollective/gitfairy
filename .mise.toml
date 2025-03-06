@@ -7,11 +7,15 @@ pnpm = "10.5.2"
 
 [task_config]
 includes = [
-  ".config/tasks.md.toml"
+  ".config/tasks.md.toml",
+  ".config/tasks.rs.toml"
 ]
 
 [vars]
 config_dir = "{{config_root}}/.config"
+
+[env]
+CLIPPY_CONF_DIR="{{vars.config_dir}}"
 
 [tasks.fmt]
 description = "Run all formatting tasks"
