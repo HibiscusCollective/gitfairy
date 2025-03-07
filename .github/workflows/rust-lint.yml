@@ -1,16 +1,10 @@
 name: Linting Checks
+
+permissions:
+    contents: read
+
 on:
     push:
-        paths:
-            - .github/workflows/rust-lint.yml
-            - Cargo.toml
-            - Cargo.lock
-            - .clippy.toml
-            - .rustfmt.toml
-            - cli/**
-            - lib/**
-            - os/**
-            - ui/**
     pull_request:
 
 jobs:
@@ -19,7 +13,10 @@ jobs:
         permissions:
             contents: read
         container:
-            image: rust:1.84-slim-bullseye
+            image: rust:1.85-slim-bullseye
         steps:
             - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
-            - run:
+            - run: |
+                  curl https://mise.run | sh
+                  mise install
+            - run: mise lint
