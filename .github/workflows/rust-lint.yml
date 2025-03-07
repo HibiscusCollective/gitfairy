@@ -1,5 +1,5 @@
 name: Linting Checks
-on: 
+on:
     push:
         paths:
             - .github/workflows/rust-lint.yml
@@ -12,14 +12,14 @@ on:
             - os/**
             - ui/**
     pull_request:
-    
+
 jobs:
-  rust:
-    runs-on: ubuntu-24.04
-    permissions:
-      contents: read
-    container:
-      image: rust:1.84-slim-bullseye
-    steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
-      - run: 
+    rust:
+        runs-on: ubuntu-24.04
+        permissions:
+            contents: read
+        container:
+            image: rust:1.84-slim-bullseye
+        steps:
+            - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+            - run:

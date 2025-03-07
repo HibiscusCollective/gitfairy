@@ -21,9 +21,6 @@ exclude = ["target/", "*.log", "*.tmp"]
 include = ["src/**/*", "Cargo.toml", "README.md", "LICENSE"]
 publish = true
 
-[workspace.build]
-rustflags = ["-D", "warnings"]
-
 [workspace.lints.clippy]
 style = "deny"
 complexity = "deny"

@@ -7,7 +7,7 @@ node = "23.9.0"
 "npm:cspell" = "8.17.5"
 
 [task_config]
-includes = [".config/tasks.md.toml", ".config/tasks.rs.toml"]
+includes = [".config/tasks.md.toml", ".config/tasks.rs.toml", ".config/tasks.ts.toml", ".config/tasks.js.toml"]
 
 [vars]
 config_dir = "{{config_root}}/.config"

@@ -1,0 +1,17 @@
+["fmt:prettier:js"]
+description = "Run prettier on javascript files"
+usage = "arg '[files]' #var=true default='**/*.{js,jsx,mjs,cjs}'"
+sources = ["**/*.{js,jsx,mjs,cjs}"]
+run = "bun fmt {{arg(name='files')}}"
+
+["lint:eslint:js"]
+description = "Run eslint on javascript files"
+usage = "arg '[files]' #var=true default='**/*.{js,jsx,mjs,cjs}'"
+sources = ["**/*.{js,jsx,mjs,cjs}"]
+run = "bun lint {{arg(name='files')}}"
+
+["fix:eslint:js"]
+description = "Run eslint on javascript files"
+usage = "arg '[files]' #var=true default='**/*.{js,jsx,mjs,cjs}'"
+sources = ["**/*.{js,jsx,mjs,cjs}"]
+run = "bun fix {{arg(name='files')}}"
