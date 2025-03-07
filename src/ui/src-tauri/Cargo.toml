@@ -1,11 +1,20 @@
 [package]
-name = "gitfairy"                                                           # This will be the name on crates.io
+name = "gitfairy"     
+description = "Tauri-based UI for Git repository navigation and management"                                                      # This will be the name on crates.io
+categories = ["development-tools", "game-development"]
 version.workspace = true
-edition.workspace = true
 authors.workspace = true
-license.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+documentation.workspace = true
+readme.workspace = true
+homepage.workspace = true
 repository.workspace = true
-description = "Tauri-based UI for Git repository navigation and management"
+license.workspace = true
+keywords.workspace = true
+exclude.workspace = true
+include.workspace = true
+publish.workspace = true
 
 [lib]
 # The `_lib` suffix may seem redundant but it is necessary
@@ -18,9 +27,11 @@ crate-type = ["staticlib", "cdylib", "rlib"]
 tauri-build = { version = "2", features = [] }
 
 [dependencies]
-tauri = { version = "2", features = [] }
-tauri-plugin-opener = "2"
 libgitfairy.workspace = true
+## Workspace dependencies
 tokio.workspace = true
 serde.workspace = true
 serde_json.workspace = true
+## External dependencies
+tauri = { version = "2", features = [] }
+tauri-plugin-opener = "2"

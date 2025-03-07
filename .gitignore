@@ -1,18 +1,18 @@
 ##### Deny all #####
 *
 
-###### Rust ########
-!**/Cargo.toml
-!**/Cargo.lock
-!**/src
-!**/src/**/*.rs
+###### Code ########
+!Cargo.lock
+!Cargo.toml
+!rust-toolchain.toml
+!*.rs
 
-###### Tauri #######
 !*.css
 !*.js
+!*.ts
 !*.html
-!*.json
-!pnpm-lock.yaml
+!bun.lock
+!package-lock.json
 
 !src/ui/
 !src/ui/.vscode
@@ -21,12 +21,15 @@
 !src/ui/src-tauri/
 !src/ui/src-tauri/**/
 
+!src/ui/tsconfig.json
+!src/ui/**/default.json
+
 ##### Linters ######
 !.config
 !.linters
 # Commits
 !.czrc
-!commitlint.config.mjs
+!commitlint.config.ts
 # Markdown
 !.markdownlint-cli2.jsonc
 # Spelling
@@ -68,10 +71,12 @@
 !.windsurfrules
 
 ##### Modules ######
-!lib
-!os
-!ui
-!cli
+!src/
+!src/lib
+!src/os
+!src/ui
+!src/cli
+!src/**/src
 
 #### LFS Assets ####
 !**/*.png

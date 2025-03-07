@@ -2,6 +2,7 @@
 
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/HibiscusCollective/gitfairy/badge)](https://scorecard.dev/viewer/?uri=github.com/HibiscusCollective/gitfairy)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 [<img src="./branding/logo-with-label.svg" alt="Git Fairy logo" width="25%" style="float:right"/>](./branding/logo-with-label.svg)
 Git things done — right from the context menu. No commands, no clutter, just like magic.

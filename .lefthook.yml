@@ -16,3 +16,18 @@ pre-commit:
       stage_fixed: true
     - name: "Run linters"
       run: mise run lint
+
+prepare-commit-msg:
+  piped: true
+  jobs:
+    - name: "Run commit editor"
+      interactive: true
+      env: 
+        LEFTHOOK: 0
+      run: bun run cz --hook
+
+commit-msg:
+  piped: true
+  jobs:
+    - name: "Run commit linter"
+      run: bun run commitlint --edit {1}

@@ -202,31 +202,6 @@ jobs:
 // .commitlintrc.js
 module.exports = {
   extends: ['@commitlint/config-conventional'],
-  rules: {
-    'scope-enum': [2, 'always', [
-      'cli',
-      'lib',
-      'os',
-      'ui',
-      'src',
-      'workspace',
-      'linting',
-      'decisions',
-      'templates',
-      'vision',
-      'userdocs',
-    ]],
-    'type-enum': [2, 'always', [
-      'feat',
-      'fix',
-      'docs',
-      'comp',
-      'perf',
-      'pipe',
-      'sec',
-      'test',
-    ]]
-  }
 };
 ```
 

@@ -2,10 +2,9 @@
 lefthook = "1.11.2"
 markdownlint-cli2 = "0.17.2"
 gh = "2.67.0"
+bun = "1.2.2"
 node = "23.9.0"
-pnpm = "10.5.2"
 "npm:cspell" = "8.17.5"
-rust = "1.85.0"
 
 [task_config]
 includes = [".config/tasks.md.toml", ".config/tasks.rs.toml"]

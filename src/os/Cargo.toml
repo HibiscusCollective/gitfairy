@@ -1,12 +1,20 @@
 [package]
-name = "libgitfairy-os"                                                            # Not published to crates.io
-version.workspace = true
-edition.workspace = true
-authors.workspace = true
-license.workspace = true
-repository.workspace = true
+name = "libgitfairy-os"                                                               # Not published to crates.io
 description = "Platform-specific installer and file manager integration for GitFairy"
-publish = false                                                                   # Prevent accidental publishing
+categories = ["development-tools", "game-development", "os"]
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+documentation.workspace = true
+readme.workspace = true
+homepage.workspace = true
+repository.workspace = true
+license.workspace = true
+keywords.workspace = true
+exclude.workspace = true
+include.workspace = true
+publish.workspace = true                                                              # Prevent accidental publishing
 
 [features]
 gnulinux = ["gtk", "gio"]
@@ -14,17 +22,14 @@ darwin = ["cocoa", "objc"]
 win = ["windows"]
 
 [dependencies]
+## Workspace dependencies
+tokio.workspace = true
 ## GNU/Linux
 gtk = { version = "0.18", optional = true }
 gio = { version = "0.20.7", optional = true }
-
 ## macOS
 cocoa = { version = "0.26", optional = true }
 objc = { version = "0.2", optional = true }
-
 ## Windows
-windows = { version = "0.59", optional = true }
-
-tokio.workspace = true
-
+windows = { version = "0.60", optional = true }
 
