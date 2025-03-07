@@ -16,7 +16,6 @@ exclude.workspace = true
 include.workspace = true
 publish.workspace = true
 
-
 [dependencies]
 tokio.workspace = true
 serde.workspace = true
