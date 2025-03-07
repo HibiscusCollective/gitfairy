@@ -8,7 +8,8 @@
     "**/gen/schemas/*",
     "**/*.svg",
     ".vscode",
-    "**/target/**"
+    "**/target/**",
+    "**/*.lock"
   ],
   "ignoreRegExpList": [
     "/(?<=---[\\n\\r]+(?:.*[\\n\\r])*)\\s*id: \\w+(?=[\\n\\r]+.|[\\n\\r]+---)+/gm"
