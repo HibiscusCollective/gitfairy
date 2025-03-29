@@ -18,6 +18,7 @@
 		"@typescript-eslint/parser": "^8.24.0",
 		"commitizen": "^4.3.1",
 		"commitlint": "^19.7.1",
+		"cspell": "^8.18.0",
 		"eslint": "^9.20.1",
 		"eslint-config-love": "^119.0.0",
 		"eslint-config-standard": "^17.1.0",
