@@ -1,9 +1,9 @@
 [tools]
-lefthook = "1.11.2"
+lefthook = "1.11.5"
 markdownlint-cli2 = "0.17.2"
-gh = "2.67.0"
-bun = "1.2.2"
-node = "23.9.0"
+gh = "2.69.0"
+bun = "1.2.7"
+node = "23.10.0"
 
 [task_config]
 includes = [".config/tasks.md.toml", ".config/tasks.rs.toml", ".config/tasks.ts.toml", ".config/tasks.js.toml"]
